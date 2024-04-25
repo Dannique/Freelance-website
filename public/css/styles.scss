@@ -1,4 +1,13 @@
 /*npm run watch:sass*/
+/*$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+*/
 @import "~bootstrap/dist/css/bootstrap.css";
 
 $white-color:#fafbfd;
@@ -221,8 +230,11 @@ a{
 }
 
 .navbar-scrolled {
-  backdrop-filter: blur(60px);
+  backdrop-filter: blur(20px);
   padding-top: 20px!important;
+  padding-bottom: 15px!important;
+  background: radial-gradient(circle, rgba(0, 8, 36, .6) 56%, rgba(26, 31, 64, .6) 86%, rgba(27, 28, 71, 0.45) 96%, rgba(56, 35, 74, 0.55) 100%)!important;
+
 }
 
 /******** HEADER ************/
@@ -254,7 +266,7 @@ a{
 }
 
 .title {
-  font-size: 3.3rem;
+  font-size: 3.5rem;
   letter-spacing: 1.7px;
 }
 
@@ -264,6 +276,9 @@ a{
 
 .header-subtitle {
   font-size: 1.5em;
+}
+.introtext-header{
+  width: 50%;
 }
 
 /************** INTRO *************/
@@ -371,6 +386,9 @@ font-size: .8em!important;
 
 .extras-item{
   height: 20px;
+}
+.extras-list-container{
+  padding-top: 40px;
 }
 
 // .list-span{
@@ -490,21 +508,240 @@ font-size: .8em!important;
 
 /**************** @MEDIA *****************/
 
+/************ BOOTSTRAP BREAKPOINTS ***********/
+
+// xs: 0,
+// sm: 576px,
+// md: 768px,
+// lg: 992px,
+// xl: 1200px,
+// xxl: 1400px
+
+// @include media-breakpoint-down(md) {  }
+// @include media-breakpoint-down(lg) {  }
+// @include media-breakpoint-down(xl) {  }
+// @include media-breakpoint-down(xxl) {  }
+
+/********* END BOOTSTRAP BREAKPOINTS **********/
+
+@media (max-width: 1632px){
+  
+}
+
 @media (max-width: 1490px){
   .niek-avatar{
     max-width: 240px;
   }
+  .title {
+    font-size: 2.9rem;
+    letter-spacing: 1.4px;
+  }
+  .introtext-header{
+    width: 70%;
+  }
 }
 
-@media only screen and (max-width: 500px) {
-
-	.form-title {
-		font-size: 20px;
-	}
+@media (max-width: 1200px){
+  .web-dev-container-1{
+    max-width: 420px;
+  }
+  .portfolio-img {
+    max-width: 400px;
+}
 }
 
 @media (min-width: 992px) {
   .navbar-expand-lg .navbar-collapse {
     justify-content: center;
   }
+}
+@media (max-width: 992px) {
+  .navbar-scrolled{
+    // padding-bottom: 10px!important;
+    backdrop-filter: blur(3px);
+  }
+  .navbar{
+    backdrop-filter: blur(10px);
+  }
+
+  .navbar-expand-lg .navbar-nav .nav-link{
+    font-size: 1.4em;
+  }
+  .niek-avatar{
+    max-width: 200px;
+  }
+  .title{
+    font-size: 2.5rem;
+    letter-spacing: 1.1px;
+  }
+  .introtext-header{
+    width: 85%;
+  }
+  .extras-text-container {
+    max-width: 410px;
+}
+.extras-text {
+    font-size: 1.15em;
+}
+.long-border {
+  min-height: 143px;
+}
+
+}
+
+@media (max-width:860px) {
+  .extras-wrapper{
+    flex-direction: column;
+    align-items: center;
+    padding: 0 10px;
+  }
+  .extras-text-container {
+    max-width: 444px;
+}
+.short-line{
+   visibility: hidden;
+  // display: none;
+}
+.extras-item {
+    height: fit-content;
+    line-height: 15px;
+  border-left: 3px solid #BDB2FA;
+  border-radius: 3px;
+}
+.line-transparent{
+  margin: -6px 0 -4px -1px;
+}
+}
+
+@media (max-width:853px){
+  .services-wrapper{
+    flex-direction: column;
+    justify-content: center!important;
+    align-items: center;
+  }
+  .portfolio-img {
+    max-width: 320px;
+}
+}
+
+@media (max-width:768px){
+  .header {
+    padding: 150px 0 80px;
+}
+  .niek-avatar-2{
+    max-width: 190px;
+    display: flex!important;
+  }
+  .niek-avatar-2-wrapper{
+    display: flex!important;
+    flex-direction:row;
+    justify-content: center;
+    width:100%;
+    padding-bottom: 40px;
+  }
+
+  .niek-avatar{
+    display: none;
+  }
+  .hidden-wrapper{
+    padding-bottom: 30px;
+    justify-content: flex-start;
+  }
+
+.header{
+  text-align: center;
+}
+.title{
+  font-size: 2.8rem;
+}
+.introtext-header{
+  font-size: 1.2em;
+}
+.service-text{
+  font-size: 1.2em;
+}
+.left-container{
+  margin:50px 0 0 0;
+}
+.right-container{
+  margin: 50px 0 0;
+}
+.portfolio-items{
+  justify-content: center;
+  align-items: center;
+  padding:10px;
+}
+.pricing-container .price-check {
+  font-size: 0.85em;
+  margin-bottom: 10px;
+}
+.pricing-title {
+  font-size: 1.7rem!important;
+}
+.price {
+  font-size: 1.4rem!important;
+}
+}
+
+@media only screen and (max-width: 576px) {
+  .right-container{
+    display: flex;
+    flex-direction: column;
+  }
+  .left-container{
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+.portfolio-text {
+  text-align: center;
+}
+p, .text {
+  font-size: 1.1em;
+}
+.contactform-container {
+  padding: 30px 20px;
+}
+.introtext-header {
+  width: 95%;
+}
+h2 {
+  font-size: 2.7rem;
+}
+}
+
+@media only screen and (max-width: 500px) {
+	.form-title {
+		font-size: 20px;
+	}
+  .title {
+    font-size: 2rem;
+}
+.niek-avatar-2 {
+  max-width: 150px;
+  display: flex !important;
+}
+.header-subtitle {
+  font-size: 1.35em;
+}
+.hi-title{
+  font-size: 2.6em;
+}
+}
+
+@media (max-width: 460px){
+  .web-dev-container-1{
+    margin: 0 10px;
+  }
+}
+@media (max-width: 412px) {
+  .long-border {
+    min-height: 170px;
+}
+}
+
+@media (max-width: 382px) {
+  .long-border {
+    min-height: 190px;
+}
 }
