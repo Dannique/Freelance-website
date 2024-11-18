@@ -14,9 +14,8 @@
   --bs-body-font-weight: 400;
   --bs-body-line-height: 1.5;
   --bs-body-color: #fafbfd;
-  --bs-body-color-rgb: 250, 251, 253;
-  --bs-body-bg: #000824;
   --bs-body-bg-rgb: 0, 8, 36;
+  --bs-emphasis-color-rgb: 14, 16, 112;
   --bs-main-font: Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans",
     Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
     "Noto Color Emoji";
@@ -36,19 +35,14 @@
   --bs-navbar-brand-font-size: 2.25rem;
   --bs-navbar-brand-color: rgba(var(--bs-emphasis-color-rgb), 1);
   --bs-navbar-brand-hover-color: rgba(var(--bs-emphasis-color-rgb), 1);
-  --bs-navbar-nav-link-padding-x: 3.5rem;
-  --bs-navbar-toggler-padding-y: 0.25rem;
-  --bs-navbar-toggler-padding-x: 0.75rem;
-  --bs-navbar-toggler-font-size: 1.25rem;
-  --bs-navbar-toggler-border-color: rgba(var(--bs-emphasis-color-rgb), 0.15);
-  --bs-navbar-toggler-border-radius: var(--bs-border-radius);
-  --bs-navbar-toggler-focus-width: 0.25rem;
-  --bs-navbar-toggler-transition: box-shadow 0.15s ease-in-out;
 }
 
 body {
   margin: 0;
   overflow-x: hidden;
+  background: linear-gradient(-45deg, #181e38, #22133f, #000824, #12002e);
+  background-size: 400% 400%;
+  animation: gradient 8s ease infinite;
 }
 body::-webkit-scrollbar {
   width: 9px;
@@ -59,6 +53,22 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb {
   background-color: rgba(85, 84, 87, 0.8); /* color of the scroll thumb */
   border-radius: 20px;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+::selection {
+  background-color: #46aecb;
+  color: #22133f;
 }
 
 .roboto-thin {
@@ -187,17 +197,21 @@ a {
   z-index: -1000;
 }
 
+.id-anchor {
+  display: block;
+  height: 50px; /*same height as header*/
+  margin-top: -50px; /*same height as header*/
+  visibility: hidden;
+}
+
+.container {
+  max-width: 1430px !important;
+  margin: auto !important;
+}
+
 /************** NAVBAR *******************/
 .bg-body-tertiary {
   background-color: transparent !important;
-}
-
-.navbar-toggler {
-  background-color: rgba(250, 251, 253, 0.76) !important;
-}
-
-.navbar-toggler {
-  color: rgba(250, 251, 253, 0.76) !important;
 }
 
 .navbar-brand {
@@ -210,6 +224,7 @@ a {
   font-size: 1.7em;
   box-shadow: none !important;
   border: none !important;
+  letter-spacing: 1px;
 }
 
 .navbar-expand-lg .navbar-nav .nav-link:hover {
@@ -217,11 +232,59 @@ a {
   overflow-x: hidden !important;
 }
 
+.navbar-toggler-icon {
+  --bs-navbar-toggler-icon-bg: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(250, 251, 253, 0.76)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E") !important;
+}
+
+.navbar-toggler {
+  border-color: rgba(250, 251, 253, 0.76) !important;
+  background-color: transparent !important;
+  --bs-navbar-toggler-border-radius: var(--bs-border-radius);
+  --bs-navbar-toggler-focus-width: 0.25rem;
+  --bs-navbar-toggler-transition: box-shadow 0.15s ease-in-out;
+  --bs-navbar-toggler-padding-y: 0.25rem;
+  --bs-navbar-toggler-padding-x: 0.75rem;
+  --bs-navbar-toggler-font-size: 1.25rem;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none !important;
+}
+
 .navbar-scrolled {
   backdrop-filter: blur(20px);
   padding-top: 20px !important;
   padding-bottom: 15px !important;
   background: radial-gradient(circle, rgba(0, 8, 36, 0.6) 56%, rgba(26, 31, 64, 0.6) 86%, rgba(27, 28, 71, 0.45) 96%, rgba(56, 35, 74, 0.55) 100%) !important;
+}
+
+.flag {
+  max-width: 50px;
+  margin-right: 20px;
+}
+
+.dropdown-menu[data-bs-popper] {
+  right: 0;
+  left: auto !important;
+  background: transparent !important;
+}
+
+.dropdown-toggle {
+  border: none !important;
+  background: none !important;
+}
+
+.item-dropdown {
+  cursor: pointer;
+}
+
+.dropdown-itemhover {
+  background: linear-gradient(180deg, rgba(14, 16, 112, 0.5) 0%, rgba(57, 8, 80, 0.59) 45%, rgba(128, 21, 131, 0.38) 100%) !important;
+}
+
+.logo {
+  max-width: 50px;
+  opacity: 60%;
 }
 
 /******** HEADER ************/
@@ -234,10 +297,6 @@ a {
   right: -100px;
   top: 350px;
   overflow-x: hidden;
-}
-
-.top-div {
-  background: linear-gradient(180deg, rgba(0, 8, 36, 0.035) 0%, rgba(66, 15, 106, 0.26) 22%, rgba(199, 114, 228, 0.1) 57%, rgba(162, 161, 236, 0.04) 80%, rgba(126, 206, 243, 0) 100%);
 }
 
 .header {
@@ -259,46 +318,74 @@ a {
 }
 
 .introtext-header {
-  width: 50%;
+  width: 40%;
 }
 
 /************** INTRO *************/
-.service-container .service-icon {
-  max-width: 50px;
+.services-wrapper {
+  max-width: min-content;
+  text-align: center;
+}
+.services-wrapper .service-wrapper .service-icon {
+  max-width: 130px;
+  margin-bottom: -90px;
+}
+.services-wrapper .service-wrapper .commerce-icon {
+  transform: rotate(-0.05turn);
+}
+.services-wrapper .service-wrapper .service-container {
+  width: 420px;
+  height: 225px;
+}
+.services-wrapper .service-wrapper .service-container .service-text {
+  font-size: 0.98em;
 }
 
 .web-dev-container-1 {
-  max-width: 550px;
   border-width: 3px;
   border-style: solid;
   border-radius: 40px;
   border-image: linear-gradient(to bottom, rgba(212, 172, 250, 0.8823529412) 0%, #6f75a9 40%, #2b2d74 100%) 1;
 }
 
-/********** PORTFOLIO **********/
-.portfolio-img {
-  max-width: 500px;
+.cta {
+  max-width: 900px;
+}
+.cta .cta-btn {
+  max-width: 300px;
+  transition: 0.3s;
+}
+.cta .cta-btn:hover {
+  border-image: none;
+  border-image: linear-gradient(to right, rgba(219, 193, 243, 0.8352941176) 0%, #abb0e3 60%, #5d60ba 100%) 1;
 }
 
-.portfolio-p {
+/********** PORTFOLIO **********/
+.portfolio {
+  max-width: 1780px;
+  margin: auto;
+}
+.portfolio .portfolio-img {
+  max-width: 500px;
+}
+.portfolio .portfolio-p {
   font-size: 1rem;
   width: 250px;
 }
-
-.portfolio-link {
+.portfolio .portfolio-link {
   font-size: 1.3em;
 }
-
-.portfolio-text {
+.portfolio .portfolio-text {
   width: min-content;
 }
-
-.left-container {
+.portfolio .left-container {
   margin-left: 150px;
 }
-
-.right-container {
+.portfolio .right-container {
   margin-right: 150px;
+}
+.portfolio .teamforge-container {
+  padding-top: 40px;
 }
 
 /******** PRICING ************/
@@ -316,8 +403,9 @@ a {
 .pricing-container .price {
   letter-spacing: 1.7px;
   font-size: 1.6rem;
+  font-weight: 600 !important;
 }
-.pricing-container .price .price-color {
+.pricing-container .price-color {
   color: #bcd5ff;
 }
 .pricing-container .price-check {
@@ -339,42 +427,6 @@ a {
 }
 
 /******************** EXTRA'S ***********************/
-.extras-wrapper {
-  font-size: 0.9em;
-}
-
-.extras-text-container {
-  max-width: 530px;
-}
-
-.extras-text-wrapper {
-  max-height: 200px;
-}
-
-.extras-text {
-  height: fit-content;
-}
-
-.long-border {
-  min-height: 130px;
-}
-
-.line-transparent {
-  margin: -6px 0;
-}
-
-.extras-list-container {
-  font-size: 0.8em !important;
-}
-
-.extras-item {
-  height: 20px;
-}
-
-.extras-list-container {
-  padding-top: 40px;
-}
-
 /******************** CONTACT ***********************/
 .contact-links {
   font-size: 1.3em;
@@ -383,13 +435,15 @@ a {
 .contact-top-circle {
   left: -280px;
   margin-top: -200px;
+  opacity: 5%;
 }
 
 .contact-bottom-circle {
   width: 90vw;
   height: 70px;
   right: 10px;
-  background-color: rgb(210, 143, 241);
+  background-color: rgba(210, 143, 241, 0.2);
+  overflow: hidden;
 }
 
 .contact-link:hover {
@@ -467,6 +521,12 @@ a {
   outline: none;
 }
 
+.created-by {
+  font-size: 0.7em;
+  position: relative;
+  top: 60px;
+}
+
 /**************** @MEDIA *****************/
 /************ BOOTSTRAP BREAKPOINTS ***********/
 /********* END BOOTSTRAP BREAKPOINTS **********/
@@ -482,12 +542,30 @@ a {
     width: 70%;
   }
 }
+@media (max-width: 1366px) {
+  .pricing-container {
+    max-width: 280px;
+    padding: 10px 10px 10px 15px;
+  }
+  .pricing-container .price-check {
+    margin-bottom: 10px;
+  }
+}
 @media (max-width: 1200px) {
   .web-dev-container-1 {
     max-width: 420px;
   }
   .portfolio-img {
     max-width: 400px;
+  }
+  .flag {
+    max-width: 40px;
+  }
+}
+@media (max-width: 1183px) {
+  .pricing-container {
+    max-width: 480px;
+    padding: 10px 10px 10px 15px;
   }
 }
 @media (min-width: 992px) {
@@ -504,6 +582,15 @@ a {
   }
   .navbar-expand-lg .navbar-nav .nav-link {
     font-size: 1.4em;
+  }
+  .navbar > .container-fluid {
+    justify-content: initial !important;
+  }
+  .navbar-brand {
+    flex: auto;
+  }
+  .navbar-toggler {
+    margin-right: 20px;
   }
   .niek-avatar {
     max-width: 200px;
@@ -540,7 +627,7 @@ a {
   .extras-item {
     height: fit-content;
     line-height: 15px;
-    border-left: 3px solid #BDB2FA;
+    border-left: 3px solid #bdb2fa;
     border-radius: 3px;
   }
   .line-transparent {
@@ -588,9 +675,6 @@ a {
   .introtext-header {
     font-size: 1.2em;
   }
-  .service-text {
-    font-size: 1.2em;
-  }
   .left-container {
     margin: 50px 0 0 0;
   }
@@ -625,7 +709,8 @@ a {
   .portfolio-text {
     text-align: center;
   }
-  p, .text {
+  p,
+  .text {
     font-size: 1.1em;
   }
   .contactform-container {

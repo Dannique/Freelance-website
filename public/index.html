@@ -2,525 +2,700 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1.0, user-scalable=no">
-    <!-- meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1.0, user-scalable=no" -->
-    <title>Let's make a website for you!</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400;1,500&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1.0, user-scalable=no">
+  <!-- meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1.0, user-scalable=no" -->
+  <title>Let's make a website for you!</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400;1,500&display=swap"
+    rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 </head>
+
 <body>
-    <article>
-<div class="top-div">
-    <div class="blue-circle header-blue-circle"></div>
-        <nav id="navbar" class="navbar navbar-expand-lg bg-body-tertiary d-flex justify-center outfit-regular bg-transparent pt-5 fixed-top nav-underline">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="#">Navbar</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse justify-center" id="navbarNav">
-                <ul class="navbar-nav">
-                  <li class="nav-item px-lg-5">
-                    <a class="nav-link" href="#intro">Intro</a>
-                  </li>
-                  <li class="nav-item px-lg-5">
-                    <a class="nav-link" href="#portfolio">Portfolio</a>
-                  </li>
-                  <li class="nav-item px-lg-5">
-                    <a class="nav-link" href="#pricing">Pricing</a>
-                  </li>
-                  <li class="nav-item px-lg-5">
-                    <a class="nav-link" href="#contact">Contact</a>
-                  </li>
-                </ul>
-              </div>
+  <article>
+    <div class="top-div">
+      <div class="blue-circle header-blue-circle"></div>
+      <nav id="navbar"
+        class="navbar navbar-expand-lg bg-body-tertiary d-flex justify-center outfit-regular bg-transparent pt-5 fixed-top nav-underline">
+        <div class="container-fluid">
+
+          <a class="navbar-brand" href="#"><img src="/images/logo.png" alt="logo" class="logo" /></a>
+
+          <div class="justify-content-lg-between justify-content-end">
+            <button class="navbar-toggler custon-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+              aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-lg-center justify-content-end" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item px-xl-5 px-4">
+                  <a class="nav-link" href="#">Intro</a>
+                </li>
+                <li class="nav-item px-xl-5 px-4">
+                  <a class="nav-link" id="navItemNl" href="#services">Services</a>
+                </li>
+                <li class="nav-item px-xl-5 px-4">
+                  <a class="nav-link" href="#portfolio">Portfolio</a>
+                </li>
+                <li class="nav-item px-xl-5 px-4">
+                  <a class="nav-link" href="#contact">Contact</a>
+                </li>
+              </ul>
+              <!-- <div class="justify-end">
+                  <a><img class="flag" loading="lazy" alt="" src="/images/ENflag.svg"/></a> 
+                 <a title="switch to Dutch/Nederlands"> <img class="flag" loading="lazy" alt="dutch flag" src="/images/NLflag.svg"/></a>
+                </div> -->
             </div>
-          </nav>
-
-<div class="header d-flex align-center justify-content-md-around justify-content-center flex-md-row flex-column-reverse">
-<div class="my-md-4 pt-md-5"> <h1 class="outfit-bold title hi-title">Hi!</h1> 
-  <h1 class="outfit-bold title mb-4 tag">My name is Dannique. <br/> I am a web developer.</h1>
-  <div class="niek-avatar-2-wrapper"><img class="niek-avatar-2 d-none" loading="lazy" alt="" src="/images/niek.png"/></div>
-    <p class="white-background-text header-subtitle outfit-medium">I design and create websites.</p>
-</div>
-<div>
-     <img class="niek-avatar" loading="lazy" alt="" src="/images/niek.png"/>
-</div>
-</div>
-<div class="pink-circle header-pink-circle"></div>
-        </div>
-
-        <div class="intro py-5 mt-lg-3" id="intro">
-            <div class="text-center">
-<h2 class="pb-4">Intro</h2>
-              <p class="text m-auto pb-1 introtext-header"> I'm all about creating websites that grow with your business.<br/>
-                I love helping small/medium sized businesses by designing and develop websites that truly reflect their vision and goals. Let's work together to bring your ideas to life and boost your online presence!</p>
-            </div>
-
-            <div class="services-wrapper d-flex justify-content-around py-5 overflow-hidden"  data-aos="fade-right">
-
-              <div class="web-dev-container-1 service-container text-center overflow-hidden py-1 mt-5">
-                <div class="d-flex flex-column p-sm-4 p-2 align-items-center">
-                  <img class="service-icon pb-4" loading="lazy" alt="" src="/images/design-icon.svg"/>
-                  <h3 class="white-background-text outfit-medium mb-3">Website Design</h3>
-                  <p class="px-xl-5 px-1 service-text"> I will design websites tailored to your brand identity until you are satisfied. 
-                    Your site will be responsive for all devices and user-friendly, ensuring a seamless experience for your visitors.</p>
-                </div>
-              </div>
-
-              <div class="web-dev-container-1 service-container text-center overflow-hidden py-1 mt-5">
-                <div class="d-flex flex-column p-sm-4 p-2 align-items-center">
-                  <img class="service-icon pb-4" loading="lazy" alt="" src="/images/desktop-icon.svg"/>
-                  <h3 class="white-background-text outfit-medium mb-3">Website Development</h3>
-                  <p class="px-xl-3 px-1 service-text">A visually appealing design is only half the equation. Behind every website is a development process.
-                    I will translate designs into fully functional websites that perform across all devices.</p>
-                </div>
-              </div>
-
-
-
-            </div>
-        </div>
-
-
-
-        <div class="portfolio pt-5 mt-lg-5" id="portfolio">
-<div class="portfolio-intro text-center m-auto">
-          <h2 class="pb-5">Portfolio</h2>
-          <p class="text m-auto pb-5">Here are a few of the projects that I made for clients.</p>
           </div>
-          <div class="top-div">
-<div class="d-flex flex-column p-lg-5 portfolio-items">
+          <div class="dropdown">
+            <a class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-globe"
+                viewBox="0 0 16 16">
+                <path
+                  d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m7.5-6.923c-.67.204-1.335.82-1.887 1.855A8 8 0 0 0 5.145 4H7.5zM4.09 4a9.3 9.3 0 0 1 .64-1.539 7 7 0 0 1 .597-.933A7.03 7.03 0 0 0 2.255 4zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a7 7 0 0 0-.656 2.5zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5zM8.5 5v2.5h2.99a12.5 12.5 0 0 0-.337-2.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5zM5.145 12q.208.58.468 1.068c.552 1.035 1.218 1.65 1.887 1.855V12zm.182 2.472a7 7 0 0 1-.597-.933A9.3 9.3 0 0 1 4.09 12H2.255a7 7 0 0 0 3.072 2.472M3.82 11a13.7 13.7 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5zm6.853 3.472A7 7 0 0 0 13.745 12H11.91a9.3 9.3 0 0 1-.64 1.539 7 7 0 0 1-.597.933M8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855q.26-.487.468-1.068zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.7 13.7 0 0 1-.312 2.5m2.802-3.5a7 7 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7 7 0 0 0-3.072-2.472c.218.284.418.598.597.933M10.855 4a8 8 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4z" />
+              </svg>
+            </a>
 
-  <div class="vanwaarde-container d-flex align-items-center left-container" data-aos="fade-right">
-    <div class="portfolio-text left">
-    <a class="white-background-text outfit-medium portfolio-link" href="https://vanwaardepersoneel.nl" target="_blank">vanwaardepersoneel.nl</a>
-    <p class="roboto-light portfolio-p mt-2">Custom website for a secondment agency. Made with PHP, Javascript, HTML and SCSS</p>
+            <ul class="dropdown-menu dropdown-menu-right">
+              <li class="item-dropdown"> <a title="switch to Dutch/Nederlands" class="dropdown-item" id="language-nl">
+                  <img class="flag" loading="lazy" alt="dutch flag" src="/images/NLflag.svg" />Nederlands</a></li>
+              <li class="item-dropdown"> <a title="switch to English/Engels" class="dropdown-item" id="language-en">
+                  <img class="flag" loading="lazy" alt="English flag" src="/images/ENflag.svg" />English</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div
+        class="header d-flex align-center justify-content-md-around justify-content-center flex-md-row flex-column-reverse container">
+        <div class="my-md-4 pt-md-5">
+          <h1 class="outfit-bold title hi-title">Hi!</h1>
+          <h1 class="outfit-bold title tag" id="title2">My name is Dannique. </h1>
+          <h1 class="outfit-bold title tag mb-4" id="title3"> I am a web developer.</h1>
+          <div class="niek-avatar-2-wrapper"><img class="niek-avatar-2 d-none" loading="lazy" alt=""
+              src="/images/niek.png" /></div>
+          <p class="white-background-text header-subtitle outfit-medium" id="title4">I design and create websites.</p>
+        </div>
+        <div>
+          <img class="niek-avatar" loading="lazy" alt="" src="/images/niek.png" />
+        </div>
+      </div>
+      <div class="pink-circle header-pink-circle"></div>
     </div>
-    <img class="left-img portfolio-img" loading="lazy" alt="" src="/images/vanwaarde1.png"/>
-  </div>
 
-  <div class="beinema-container d-flex align-items-center justify-content-md-end right-container" data-aos="fade-left">
-    <img class="left-img portfolio-img" loading="lazy" alt="" src="/images/beinema1.png"/>
-    <div class="portfolio-text right ps-sm-3">
-    <a class="white-background-text outfit-medium portfolio-link" href="https://beinemadejong.nl" target="_blank">beinemadejong.nl</a>
-    <p class="roboto-light portfolio-p mt-2">Custom website for a mortgage and financial advisor. Made with PHP, Javascript, HTML and SCSS</p>
+    <div class="intro py-5 mt-lg-3">
+      <div class="text-center">
+        <h2 class="pb-4">Intro</h2>
+        <p class="text m-auto pb-1 introtext-header" id="introText"> I love designing and building websites that can
+          grow with your business.
+          <br />
+          My focus is on helping small and medium-sized businesses by creating websites that reflect their vision and
+          goals. <br /> Together, we can bring your ideas to life and increase your online visibility!
+        </p>
+      </div>
     </div>
-  </div>
 
-  <div class="teamforge-container d-flex align-items-center left-container" data-aos="fade-right">
-    <div class="portfolio-text left">
-    <a class="white-background-text outfit-medium portfolio-link" href="https://teamforgeglobal.com" target="_blank">teamforgeglobal.com</a>
-    <p class="roboto-light portfolio-p mt-2">Custom website for an oursourcing company. Made with PHP, Javascript, HTML and CSS</p>
-    </div>
-    <img class="left-img portfolio-img" loading="lazy" alt="" src="/images/teamforge1.png"/>
-  </div>
-
-  <div class="dannique-container d-flex align-items-center justify-content-md-end right-container" data-aos="fade-left">
-    <img class="left-img portfolio-img" loading="lazy" alt="" src="/images/dannique-me1.png"/>
-    <div class="portfolio-text right ps-sm-3">
-    <a class="white-background-text outfit-medium portfolio-link" href="https://dannique.me" target="_blank">dannique.me</a>
-    <p class="roboto-light portfolio-p  mt-2">My own website.<br/>
-      Made with Javascript, HTML, SCSS, and React.</p>
-    </div>
-  </div>
-
- <div class="pink-circle portfolio-circle"></div>
-
-</div>
+    <span class="id-anchor" id="services"></span>
+    <div class="pt-5 mt-5 container">
+      <h2 class="pb-5 text-center">Services</h2>
+      <div class="services-wrapper d-flex mx-auto">
+        <div class="service-wrapper mx-2">
+          <img class="service-icon" loading="lazy" alt="" src="/images/icon-development.png" />
+          <div class="web-dev-container-1 service-container text-center overflow-hidden py-1 mt-5">
+            <div class="d-flex flex-column pt-5 align-items-center">
+              <h5 class="white-background-text outfit-medium mb-3" id="websiteDesignTitle">Custom Website Design &
+                Development</h5>
+              <p class="px-xl-4 px-1 service-text" id="websiteDesign">Designing and building responsive, brand-focused
+                websites with or without WordPress, using custom code like HTML, CSS, JavaScript, React, or PHP tailored
+                to your needs.</p>
+            </div>
           </div>
         </div>
 
-<div class="blue-circle top-pricing-circle"></div>
+        <div class="service-wrapper mx-1">
+          <img class="service-icon commerce-icon" loading="lazy" alt="" src="/images/icon-ecommerce1.png" />
+          <div class="web-dev-container-1 service-container text-center overflow-hidden py-1 mt-5">
+            <div class="d-flex flex-column pt-5 align-items-center">
+              <h5 class="white-background-text outfit-medium mb-3" id="EcommerceTitle">E-commerce Solutions</h5>
+              <p class="px-xl-4 px-1 service-text" id="Ecommerce">Creating user-friendly, secure online stores with
+                WooCommerce or Shopify, designed to boost your sales through a visually appealing and effective
+                e-commerce site.</p>
+            </div>
+          </div>
+        </div>
 
-        <div class="pricing pt-5 mt-lg-5" id="pricing">
-
-          <h2 class="pt-5">Pricing</h2>
-
-          <div class="pricing-wrapper d-flex flex-wrap justify-content-center py-5" data-aos="fade-up">
-
-
-<div class="pricing-container budget flex-column m-md-4 mx-1 mb-5">
-  <div class="d-flex flex-column align-items-center">
-  <h3 class="white-background-text outfit-medium my-4 pricing-title">Budget</h3>
-  <h3 class="outfit-medium text-center price pb-3">From <span class="price-color"> €160</span></h3>
-</div>
-  <div class="price-check-wrapper">
-    <p class="price-check d-flex">
-      <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg"/>
-      1 landing page
-    </p>
-    <p class="price-check d-flex">
-      <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg"/>
-      Custom UI-design
-    </p>
-    <p class="price-check d-flex">
-      <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg"/>
-      Social media buttons/icons
-    </p>
-    <p class="price-check d-flex">
-      <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg"/>
-      Responsive on desktop, tablet and mobile
-    </p>
-    <p class="price-check d-flex">
-      <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg"/>
-      Help with setup host and domain name
-    </p>
-
-    <p class="price-check d-flex">
-      <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg"/>
-      1 change
-    </p>
-  </div>
-</div>
+        <div class="service-wrapper mx-2">
+          <img class="service-icon" loading="lazy" alt="" src="/images/icon-SEO.png" />
+          <div class="web-dev-container-1 service-container text-center overflow-hidden py-1 mt-5">
+            <div class="d-flex flex-column pt-5 align-items-center">
+              <h5 class="white-background-text outfit-medium mb-3" id="SEOTitle">SEO Optimization</h5>
+              <p class="px-xl-4 px-1 service-text" id="SEO">Optimize website performance for better search
+                engine visibility and provide content writing services to ensure your website has engaging, SEO-friendly
+                copy.</p>
+            </div>
+          </div>
+        </div>
+      </div>
 
 
-<div class="pricing-container standard flex-column m-md-4 mx-1 mb-5">
-  <div class="d-flex flex-column align-items-center">
-  <h3 class="white-background-text outfit-medium my-4 pricing-title">Standard</h3>
-  <h3 class="outfit-medium text-center price pb-3">From <span class="price-color"> €399</span></h3>
-</div>
-  <div class="price-check-wrapper">
-    <p class="price-check d-flex">
-      <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg"/>
-      Up to 8 pages
-    </p>
-    <p class="price-check d-flex">
-      <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg"/>
-      Custom UI-design
-    </p>
-    <p class="price-check d-flex">
-      <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg"/>
-      Social media buttons/icons
-    </p>
-    <p class="price-check d-flex">
-      <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg"/>
-      Responsive on desktop, tablet and mobile
-    </p>
-    <p class="price-check d-flex">
-      <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg"/>
-      Help with setup host and domain name
-    </p>
-    <p class="price-check d-flex">
-      <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg"/>
-      Illustrations
-    </p>
-    <p class="price-check d-flex">
-      <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg"/>
-      Google maps integration
-    </p>
-    <p class="price-check d-flex">
-      <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg"/>
-      Essential SEO
-    </p>
-    <p class="price-check d-flex">
-      <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg"/>
-      Google Analytics
-      
-    </p>
-    <p class="price-check d-flex">
-      <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg"/>
-      Google registration
-    </p>
-    <p class="price-check d-flex">
-      <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg"/>
-      Contact form
-    </p>
-    <p class="price-check d-flex">
-      <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg"/>
-      10 days maintenance and support
-    </p>
 
-    <p class="price-check d-flex">
-      <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg"/>
-      2 changes
-    </p>
-  </div>
-</div>
+      <div class="services-wrapper d-flex mx-auto pt-md-5">
+        <div class="service-wrapper mx-2">
+          <img class="service-icon" loading="lazy" alt="" src="/images/icon-maintenance.png" />
+          <div class="web-dev-container-1 service-container text-center overflow-hidden py-1 mt-5">
+            <div class="d-flex flex-column pt-5 align-items-center">
+              <h5 class="white-background-text outfit-medium mb-3" id="maintenanceTitle">Website Maintenance</h5>
+              <p class="px-xl-5 px-1 service-text" id="maintenance">Provide continuous updates, improve website
+                performance, and implement SEO best practices to keep the website optimized and secure.</p>
+            </div>
+          </div>
+        </div>
 
+        <div class="service-wrapper mx-1">
+          <img class="service-icon" loading="lazy" alt="" src="/images/icon-content2.png" />
+          <div class="web-dev-container-1 service-container text-center overflow-hidden py-1 mt-5">
+            <div class="d-flex flex-column pt-5 align-items-center">
+              <h5 class="white-background-text outfit-medium mb-3" id="contentTitle">Content Writing for Websites</h5>
+              <p class="px-xl-5 px-1 service-text" id="contentwr">Creating clear, engaging content that connects
+                with your audience and improves your site's SEO, helping your message stand out and reach more people.
+              </p>
+            </div>
+          </div>
+        </div>
 
-<div class="pricing-container golden flex-column m-md-4 mx-1 mb-5">
-  <div class="d-flex flex-column align-items-center">
-  <h3 class="white-background-text outfit-medium my-4 pricing-title">Golden</h3>
-  <h3 class="outfit-medium text-center price pb-3">From <span class="price-color"> €499</span></h3>
-</div>
-  <div class="price-check-wrapper">
-    <p class="price-check d-flex">
-      <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg"/>
-      Up to 10 pages
-    </p>
-    <p class="price-check d-flex">
-      <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg"/>
-      Custom UI-design
-    </p>
-    <p class="price-check d-flex">
-      <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg"/>
-      Social media buttons/icons
-    </p>
-    <p class="price-check d-flex">
-      <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg"/>
-      Responsive on desktop, tablet and mobile
-    </p>
-    <p class="price-check d-flex">
-      <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg"/>
-      Help with setup host and domain name
-    </p>
-    <p class="price-check d-flex">
-      <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg"/>
-      Illustrations and stock photo's
-    </p>
-    <p class="price-check d-flex">
-      <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg"/>
-      Google maps integration
-    </p>
-    <p class="price-check d-flex">
-      <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg"/>
-      Essential SEO
-    </p>
-    <p class="price-check d-flex">
-      <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg"/>
-      Google Analytics
-      
-    </p>
-    <p class="price-check d-flex">
-      <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg"/>
-      Google registration
-    </p>
-    <p class="price-check d-flex">
-      <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg"/>
-      Contact form and blog
-    </p>
-    <p class="price-check d-flex">
-      <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg"/>
-      Social media integration
-    </p>
-    <p class="price-check d-flex">
-      <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg"/>
-      20 days maintenance and support
-    </p>
+        <div class="service-wrapper mx-2">
+          <img class="service-icon" loading="lazy" alt="" src="/images/icon-redesign.png" />
+          <div class="web-dev-container-1 service-container text-center overflow-hidden py-1 mt-5">
+            <div class="d-flex flex-column pt-5 align-items-center">
+              <h5 class="white-background-text outfit-medium mb-3" id="redesignTitle">Website Redesign & Revamp</h5>
+              <p class="px-xl-4 px-1 service-text" id="redesign">Refresh outdated websites with a fresh, polished
+                design and improved functionality, delivering a better user experience and a more professional online
+                image.</p>
+            </div>
+          </div>
+        </div>
+      </div>
 
-    <p class="price-check d-flex">
-      <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg"/>
-      4 changes
-    </p>
-  </div>
-</div>
+    </div>
+    <div class="cta mx-auto text-center">
+      <p>Interested in any of these services? I’d love to hear about your project and see how I can assist.
+        Feel free to reach out anytime!</p>
+      <a href="#contact"><button type="submit" class="btn btn-large outfit-regular cta-btn">Contact Me</button></a>
 
-<div class="pricing-container premium flex-column m-md-4 mx-1 mb-5">
-  <div class="d-flex flex-column align-items-center">
-  <h3 class="white-background-text outfit-medium my-4 pricing-title">Premium</h3>
-  <h3 class="outfit-medium text-center price pb-3">From <span class="price-color"> €650</span></h3>
-</div>
-  <div class="price-check-wrapper">
-    <p class="price-check d-flex">
-      <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg"/>
-      15+ pages
-    </p>
-    <p class="price-check d-flex">
-      <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg"/>
-      Custom UI/UX design
-    </p>
-    <p class="price-check d-flex">
-      <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg"/>
-      Social media buttons/icons
-    </p>
-    <p class="price-check d-flex">
-      <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg"/>
-      Responsive on desktop, tablet and mobile
-    </p>
-    <p class="price-check d-flex">
-      <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg"/>
-      Help with setup host and domain name
-    </p>
-    <p class="price-check d-flex">
-      <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg"/>
-      Illustrations and stock photo's
-    </p>
-    <p class="price-check d-flex">
-      <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg"/>
-      Google maps integration
-    </p>
-    <p class="price-check d-flex">
-      <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg"/>
-      In-depth SEO
-    </p>
-    <p class="price-check d-flex">
-      <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg"/>
-      Google Analytics
-      
-    </p>
-    <p class="price-check d-flex">
-      <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg"/>
-      Google registration
-    </p>
-    <p class="price-check d-flex">
-      <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg"/>
-      Contact form and blog<br/>
-      +1 of the list below *
-    </p>
-    <p class="price-check d-flex">
-      <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg"/>
-      Social media integration
-    </p>
-    <p class="price-check d-flex">
-      <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg"/>
-      30 days maintenance and support
-    </p>
+    </div>
 
-    <p class="price-check d-flex">
-      <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg"/>
-      8 changes
-    </p>
-  </div>
-</div>
+    <span class="id-anchor" id="portfolio"></span>
+    <div class="portfolio pt-5 mt-lg-5">
+      <div class="portfolio-intro text-center m-auto">
+        <h2 class="pb-5">Portfolio</h2>
+        <p class="text m-auto pb-5" id="portfolioSubtext">Here are some of my latest projects:</p>
+      </div>
+      <div class="top-div">
+        <div class="d-flex flex-column p-lg-5 portfolio-items">
 
-<div class="pink-circle pricing-circle"></div>
-
+          <div class="vanwaarde-container d-flex align-items-center left-container" data-aos="fade-right">
+            <div class="portfolio-text left">
+              <a class="white-background-text outfit-medium portfolio-link" href="https://vanwaardepersoneel.nl"
+                target="_blank">vanwaardepersoneel.nl</a>
+              <p class="roboto-light portfolio-p mt-2" id="vanwaarde">Custom made website for a secondment agency.</p>
+            </div>
+            <img class="left-img portfolio-img" loading="lazy" alt="" src="/images/vanwaarde1.png" />
           </div>
 
+          <div class="beinema-container d-flex align-items-center justify-content-md-end right-container"
+            data-aos="fade-left">
+            <img class="left-img portfolio-img" loading="lazy" alt="" src="/images/beinema1.png" />
+            <div class="portfolio-text right ps-sm-3">
+              <a class="white-background-text outfit-medium portfolio-link" href="https://beinemadejong.nl"
+                target="_blank">beinemadejong.nl</a>
+              <p class="roboto-light portfolio-p mt-2" id="beinema">Custom made website for a mortgage and financial
+                advisor.</p>
+            </div>
+          </div>
 
-        <div class="extras-wrapper d-flex justify-content-around pb-5" id="extras">
-          <div class="extras-text-container">
+          <div class="teamforge-container d-flex align-items-center left-container" data-aos="fade-right">
+            <div class="portfolio-text left">
+              <a class="white-background-text outfit-medium portfolio-link" href="https://teamforgeglobal.com"
+                target="_blank">teamforgeglobal.com</a>
+              <p class="roboto-light portfolio-p mt-2" id="teamforge">Custom made website for an oursourcing company.
+              </p>
+            </div>
+            <img class="left-img portfolio-img" loading="lazy" alt="" src="/images/teamforge1.png" />
+          </div>
+
+          <div class="dannique-container d-flex align-items-center justify-content-md-end right-container"
+            data-aos="fade-left">
+            <img class="left-img portfolio-img" loading="lazy" alt="" src="/images/NRS1.png" />
+            <div class="portfolio-text right ps-sm-3">
+              <a class="white-background-text outfit-medium portfolio-link" href="https://nrsdiving.com/"
+                target="_blank">nrsdiving.com</a>
+              <p class="roboto-light portfolio-p  mt-2" id="danniqueme">Custom made website for a ship maintenance and
+                diving company.<br /></p>
+            </div>
+          </div>
+
+          <div class="pink-circle portfolio-circle"></div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <div class="blue-circle top-pricing-circle"></div>
+
+    <!-- <div class="pricing pt-5 mt-lg-5" id="pricing">
+
+      <h2 class="pt-5" id="pricingTitle">Pricing</h2>
+
+      <div class="pricing-wrapper d-flex flex-wrap justify-content-center py-5" data-aos="fade-up" id="price-packages">
+
+
+        <div class="pricing-container budget flex-column m-xxl-4  mx-2 mb-5">
+          <div class="d-flex flex-column align-items-center">
+            <h3 class="white-background-text outfit-medium my-4 pricing-title">Budget</h3>
+            <div class="d-flex pb-3">
+              <h3 class="outfit-medium text-center price" id="from">From </h3>
+              <h3 class="price-color px-2  outfit-medium text-center price"> €160</h3>
+            </div>
+          </div>
+          <div class="price-check-wrapper">
+            <p class="price-check d-flex" id="1page">
+              <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg" />
+              1 landing page
+            </p>
+            <p class="price-check d-flex" id="customUI">
+              <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg" />
+              Custom UI-design
+            </p>
+            <p class="price-check d-flex" id="socialButtons">
+              <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg" />
+              Social media buttons/icons
+            </p>
+            <p class="price-check d-flex" id="responsive">
+              <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg" />
+              Responsive on desktop, tablet and mobile
+            </p>
+            <p class="price-check d-flex" id="hosting">
+              <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg" />
+              Help with setup host and domain name
+            </p>
+
+            <p class="price-check d-flex" id="1change">
+              <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg" />
+              1 change
+            </p>
+          </div>
+        </div>
+
+
+        <div class="pricing-container standard flex-column m-xxl-4 mx-2 mb-5">
+          <div class="d-flex flex-column align-items-center">
+            <h3 class="white-background-text outfit-medium my-4 pricing-title">Standard</h3>
+            <div class="d-flex pb-3">
+              <h3 class="outfit-medium text-center price" id="from">From </h3>
+              <h3 class="price-color px-2  outfit-medium text-center price"> €399</h3>
+            </div>
+          </div>
+          <div class="price-check-wrapper">
+            <p class="price-check d-flex" id="8pages">
+              <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg" />
+              Up to 8 pages
+            </p>
+            <p class="price-check d-flex" id="customUI">
+              <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg" />
+              Custom UI-design
+            </p>
+            <p class="price-check d-flex" id="socialButtons">
+              <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg" />
+              Social media buttons/icons
+            </p>
+            <p class="price-check d-flex" id="responsive">
+              <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg" />
+              Responsive on desktop, tablet and mobile
+            </p>
+            <p class="price-check d-flex" id="hosting">
+              <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg" />
+              Help with setup host and domain name
+            </p>
+            <p class="price-check d-flex" id="illustrations">
+              <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg" />
+              Illustrations
+            </p>
+            <p class="price-check d-flex">
+              <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg" />
+              Google Maps <span class="ms-1" id="integration">integration</span>
+            </p>
+            <p class="price-check d-flex" id="seo">
+              <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg" />
+              Essential SEO
+            </p>
+            <p class="price-check d-flex">
+              <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg" />
+              Google Analytics
+            </p>
+            <p class="price-check d-flex" id="registration">
+              <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg" />
+              Google registration
+            </p>
+            <p class="price-check d-flex" id="form">
+              <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg" />
+              Contact form
+            </p>
+            <p class="price-check d-flex">
+              <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg" />
+              10 <span id="support" class="ms-1">days maintenance and support</span>
+            </p>
+
+            <p class="price-check d-flex">
+              <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg" />
+              2 <span id="changes" class="ms-1"> changes</span>
+            </p>
+          </div>
+        </div>
+
+
+        <div class="pricing-container golden flex-column m-xxl-4 mx-2 mb-5">
+          <div class="d-flex flex-column align-items-center">
+            <h3 class="white-background-text outfit-medium my-4 pricing-title">Golden</h3>
+            <div class="d-flex pb-3">
+              <h3 class="outfit-medium text-center price" id="from">From </h3>
+              <h3 class="price-color px-2  outfit-medium text-center price"> €499</h3>
+            </div>
+          </div>
+          <div class="price-check-wrapper">
+            <p class="price-check d-flex" id="10pages">
+              <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg" />
+              Up to 10 pages
+            </p>
+            <p class="price-check d-flex" id="customUI">
+              <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg" />
+              Custom UI-design
+            </p>
+            <p class="price-check d-flex" id="socialButtons">
+              <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg" />
+              Social media buttons/icons
+            </p>
+            <p class="price-check d-flex" id="responsive">
+              <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg" />
+              Responsive on desktop, tablet and mobile
+            </p>
+            <p class="price-check d-flex" id="hosting">
+              <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg" />
+              Help with setup host and domain name
+            </p>
+            <p class="price-check d-flex" id="illustrationsStock">
+              <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg" />
+              Illustrations and stock photo's
+            </p>
+            <p class="price-check d-flex">
+              <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg" />
+              Google Maps <span class="ms-1" id="integration">integration</span>
+            </p>
+            <p class="price-check d-flex" id="seo">
+              <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg" />
+              Essential SEO
+            </p>
+            <p class="price-check d-flex">
+              <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg" />
+              Google Analytics
+
+            </p>
+            <p class="price-check d-flex" id="registration">
+              <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg" />
+              Google registration
+            </p>
+            <p class="price-check d-flex">
+              <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg" />
+              <span class="me-1" id="form"> Contact form</span><span id="blog">and blog</span>
+            </p>
+            <p class="price-check d-flex">
+              <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg" />
+              Social media <span class="ms-1" id="integration">integration</span>
+            </p>
+            <p class="price-check d-flex">
+              <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg" />
+              20 <span id="support" class="ms-1">days maintenance and support</span>
+            </p>
+
+            <p class="price-check d-flex">
+              <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg" />
+              4 <span id="changes" class="ms-1"> changes</span>
+            </p>
+
+          </div>
+        </div>
+
+        <div class="pricing-container premium flex-column m-xxl-4 mx-2 mb-5">
+          <div class="d-flex flex-column align-items-center">
+            <h3 class="white-background-text outfit-medium my-4 pricing-title">Premium</h3>
+            <div class="d-flex pb-3">
+              <h3 class="outfit-medium text-center price" id="from">From </h3>
+              <h3 class="price-color px-2  outfit-medium text-center price"> €650</h3>
+            </div>
+          </div>
+          <div class="price-check-wrapper">
+            <p class="price-check d-flex" id="pages">
+              <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg" />
+              15+ pages
+            </p>
+            <p class="price-check d-flex" id="customUIUX">
+              <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg" />
+              Custom UI/UX design
+            </p>
+            <p class="price-check d-flex" id="socialButtons">
+              <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg" />
+              Social media buttons/icons
+            </p>
+            <p class="price-check d-flex" id="responsive">
+              <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg" />
+              Responsive on desktop, tablet and mobile
+            </p>
+            <p class="price-check d-flex" id="hosting">
+              <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg" />
+              Help with setup host and domain name
+            </p>
+            <p class="price-check d-flex" id="illustrationsStock">
+              <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg" />
+              Illustrations and stock photo's
+            </p>
+            <p class="price-check d-flex">
+              <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg" />
+              Google Maps <span class="ms-1" id="integration">integration</span>
+            </p>
+            <p class="price-check d-flex" id="depthSEO">
+              <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg" />
+              In-depth SEO
+            </p>
+            <p class="price-check d-flex">
+              <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg" />
+              Google Analytics
+
+            </p>
+            <p class="price-check d-flex" id="registration">
+              <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg" />
+              Google registration
+            </p>
+            <p class="price-check d-flex" id="blogList">
+              <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg" />
+              Contact form and blog<br />
+              +1 of the list below *
+            </p>
+            <p class="price-check d-flex">
+              <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg" />
+              Social media <span class="ms-1" id="integration">integration</span>
+            </p>
+            <p class="price-check d-flex">
+              <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg" />
+              30 <span id="support" class="ms-1">days maintenance and support</span>
+            </p>
+
+            <p class="price-check d-flex">
+              <img class="check-icon" loading="lazy" alt="" src="/images/check-icon.svg" />
+              8 <span id="changes" class="ms-1"> changes</span>
+            </p>
+          </div>
+        </div>
+
+        
+
+      </div>
+
+
+      <div class="extras-wrapper d-flex justify-content-around pb-5" id="extras">
+        <div class="extras-text-container">
           <h3 class="outfit-medium ps-3">Extra's</h3>
 
-         <p class="extras-text d-flex"><img class="pe-2 long-border" loading="lazy" alt="" src="/images/extra-long-line-2.svg"/>If you're interested in adding additional features are, of course, possible.
-            For instance, adding extra pages. The list outlines some optional extras, 
+          <p class="extras-text d-flex" id="extrastxt"><img class="pe-2 long-border" loading="lazy" alt=""
+              src="/images/extra-long-line-2.svg" />If you're interested in adding additional features are, of course,
+            possible.
+            For instance, adding extra pages. The list outlines some optional extras,
             if your desired feature isn't listed, I’m all ears.
-            Thinking about an eCommerce site with authentication and Payment gateway integration? Let's talk about it!</p>
+            Thinking about an eCommerce site with authentication and Payment gateway integration? Let's talk about it!
+          </p>
 
         </div>
         <div class="extras-list-container d-flex">
-<div class="extras-list1 list d-flex flex-column pe-xl-5">
-<p class="d-flex m-0 extras-item"><img class="pe-2 short-line" loading="lazy" alt="" src="/images/line-short.svg"/>Extra pages</p>
-<span class="line-transparent"><img class="" loading="lazy" alt="" src="/images/line-short-transparent.svg"/></span>
-  <p class="d-flex m-0 extras-item"><img class="pe-2 short-line" loading="lazy" alt="" src="/images/line-short.svg"/>Logo design</p>
-  <span class="line-transparent"><img class="" loading="lazy" alt="" src="/images/line-short-transparent.svg"/></span>
-  <p class="d-flex m-0 extras-item"><img class="pe-2 short-line" loading="lazy" alt="" src="/images/line-short.svg"/>Newsletter signup</p>
-  <span class="line-transparent"><img class="" loading="lazy" alt="" src="/images/line-short-transparent.svg"/></span>
-  <p class="d-flex m-0 extras-item"><img class="pe-2 short-line" loading="lazy" alt="" src="/images/line-short.svg"/>Event calendar</p>
-  <span class="line-transparent"><img class="" loading="lazy" alt="" src="/images/line-short-transparent.svg"/></span>
-  <p class="d-flex m-0 extras-item"><img class="pe-2 short-line" loading="lazy" alt="" src="/images/line-short.svg"/>Live chat</p>
-</div>
+          <div class="extras-list1 list d-flex flex-column pe-xl-5">
+            <p class="d-flex m-0 extras-item" id="extraPages"><img class="pe-2 short-line" loading="lazy" alt=""
+                src="/images/line-short.svg" />Extra pages</p>
+            <span class="line-transparent"><img class="" loading="lazy" alt=""
+                src="/images/line-short-transparent.svg" /></span>
+            <p class="d-flex m-0 extras-item"><img class="pe-2 short-line" loading="lazy" alt=""
+                src="/images/line-short.svg" />Logo design</p>
+            <span class="line-transparent"><img class="" loading="lazy" alt=""
+                src="/images/line-short-transparent.svg" /></span>
+            <p class="d-flex m-0 extras-item" id="newsletter"><img class="pe-2 short-line" loading="lazy" alt=""
+                src="/images/line-short.svg" />Newsletter signup</p>
+            <span class="line-transparent"><img class="" loading="lazy" alt=""
+                src="/images/line-short-transparent.svg" /></span>
+            <p class="d-flex m-0 extras-item" id="calendar"><img class="pe-2 short-line" loading="lazy" alt=""
+                src="/images/line-short.svg" />Event calendar</p>
+            <span class="line-transparent"><img class="" loading="lazy" alt=""
+                src="/images/line-short-transparent.svg" /></span>
+            <p class="d-flex m-0 extras-item"><img class="pe-2 short-line" loading="lazy" alt=""
+                src="/images/line-short.svg" />Live chat</p>
+          </div>
 
 
-<div class="extras-list2 list d-flex flex-column ps-3">
-<p class="d-flex m-0 extras-item" data-toggle="tooltip" title="This is paragraph."><img class="pe-2 short-line" loading="lazy" alt="" src="/images/line-short.svg"/>Google Ads</p>
-<span class="line-transparent"><img class="" loading="lazy" alt="" src="/images/line-short-transparent.svg"/></span>
-  <p class="d-flex m-0 extras-item"><img class="pe-2 short-line" loading="lazy" alt="" src="/images/line-short.svg"/>Multi-language support</p>
-  <span class="line-transparent"><img class="" loading="lazy" alt="" src="/images/line-short-transparent.svg"/></span>
-  <p class="d-flex m-0 extras-item"><img class="pe-2 short-line" loading="lazy" alt="" src="/images/line-short.svg"/>Additional light/dark mode option</p>
-  <span class="line-transparent"><img class="" loading="lazy" alt="" src="/images/line-short-transparent.svg"/></span>
-  <p class="d-flex m-0 extras-item"><img class="pe-2 short-line" loading="lazy" alt="" src="/images/line-short.svg"/>Extension maintenance and tech support</p>
-  <span class="line-transparent"><img class="" loading="lazy" alt="" src="/images/line-short-transparent.svg"/></span>
-  <p class="d-flex m-0 extras-item"><img class="pe-2 short-line" loading="lazy" alt="" src="/images/line-short.svg"/>Other 3rd-party integration</p>
-</div>
+          <div class="extras-list2 list d-flex flex-column ps-3">
+            <p class="d-flex m-0 extras-item"><img class="pe-2 short-line" loading="lazy" alt=""
+                src="/images/line-short.svg" />Google Ads</p>
+            <span class="line-transparent"><img class="" loading="lazy" alt=""
+                src="/images/line-short-transparent.svg" /></span>
+            <p data-toggle="tooltip" title="This is the pp." class="d-flex m-0 extras-item" id="languages"><img
+                class="pe-2 short-line" loading="lazy" alt="" src="/images/line-short.svg" />Multi-language support</p>
+            <span class="line-transparent"><img class="" loading="lazy" alt=""
+                src="/images/line-short-transparent.svg" /></span>
+            <p class="d-flex m-0 extras-item" id="mode"><img class="pe-2 short-line" loading="lazy" alt=""
+                src="/images/line-short.svg" />Additional light/dark mode option</p>
+            <span class="line-transparent"><img class="" loading="lazy" alt=""
+                src="/images/line-short-transparent.svg" /></span>
+            <p class="d-flex m-0 extras-item" id="extension"><img class="pe-2 short-line" loading="lazy" alt=""
+                src="/images/line-short.svg" />Extension maintenance and tech support</p>
+            <span class="line-transparent"><img class="" loading="lazy" alt=""
+                src="/images/line-short-transparent.svg" /></span>
+            <p class="d-flex m-0 extras-item" id="3rdParty"><img class="pe-2 short-line" loading="lazy" alt=""
+                src="/images/line-short.svg" />Other 3rd-party integration</p>
+          </div>
         </div>
-        </div>
+      </div>
 
-        </div>
+    </div> -->
+
+    <div class="pink-circle pricing-circle"></div>
+
+    <span class="id-anchor" id="contact"></span>
+    <div class="contact pt-5 mt-lg-5">
+      <div class="pink-circle contact-top-circle"></div>
+
+      <h2 class="pb-5">Contact</h2>
 
 
+      <div class="contact-text-container">
+        <p class="text m-auto pb-3 text-center text introtext-header" id="contactText">Interested or have any questions?
+          Feel free to reach out. Send me an email, after that if you like, we can have a call on platforms like Teams,
+          Meet, WhatsApp, or any other platform convenient for you. I look forward to hearing from you and creating
+          something great together!</p>
 
 
-<div class="contact pt-5 mt-lg-5" id="contact">
-  <div class="pink-circle contact-top-circle"></div>
+      </div>
+      <div class="d-flex justify-content-center">
+        <div class="contact-container d-flex justify-content-center">
+          <div class="contactform-container">
+            <div class="row">
 
-          <h2 class="pb-5">Contact</h2>
-
-          
-           <div class="contact-text-container">
-            <p class="text m-auto pb-3 text-center text introtext-header">Interested or have any questions? Feel free to reach out. Send me an email, after that if you like, we can have a call on platforms like Teams, Meet, WhatsApp, or any other platform convenient for you. I look forward to hearing from you and creating something great together!</p>
-           
-
-                        </div>
-                        <div class="d-flex justify-content-center">
-<div class="contact-container d-flex justify-content-center">
-           <div class="contactform-container">
-              <div class="row">
-                   
-                      <form id="contact-form" name="myForm" class="form" action="#" onsubmit="return validateForm()" method="POST" role="form">
-                        <!-- <div class="w-100 text-center">
+              <form id="contact-form" name="myForm" class="form" action="#" onsubmit="return validateForm()"
+                method="POST" role="form">
+                <!-- <div class="w-100 text-center">
                         <h2 class="form-title text-center outfit-medium">Send an email</h2>
                       </div> -->
-                          <div class="form-group py-4">
-                              <!-- <label class="form-label" id="nameLabel" for="name">Name</label> -->
-                              <input type="text" class="form-control" id="name" name="name" placeholder="Your name" tabindex="1">
-                          </div>
-        
-                          <div class="form-group py-4">
-                              <!-- <label class="form-label" id="emailLabel" for="email">Email</label> -->
-                              <input type="email" class="form-control" id="email" name="email" placeholder="Your email" tabindex="2">
-                          </div>
-        
-                          <div class="form-group py-4">
-                              <!-- <label class="form-label" id="messageLabel" for="message">Type your message here</label> -->
-                              <textarea rows="6" cols="60" name="message" class="form-control area-text" id="message" placeholder="Your message" tabindex="4"></textarea>                                 
-                          </div>
-        
-                          <div class="text-center mt-4">
-                              <!-- <button type="submit" class="btn btn-mod btn-border btn-large">Send Message  <i class="bi bi-arrow-right arrow-icon"></i></button> -->
+                <div class="form-group py-4">
+                  <!-- <label class="form-label" id="nameLabel" for="name">Name</label> -->
+                  <input type="text" class="form-control" id="name" name="name" placeholder="Your name" tabindex="1">
+                </div>
 
-                              <a type="submit" class="btn btn-large outfit-regular">
-                                Send Message
-                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-arrow-right arrow-icon" viewBox="0 0 16 16">
-                                  <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
-                                </svg>
-                              </a>
-                          </div>
-        
-                      </form><!-- End form -->
+                <div class="form-group py-4">
+                  <!-- <label class="form-label" id="emailLabel" for="email">Email</label> -->
+                  <input type="email" class="form-control" id="email" name="email" placeholder="Your email"
+                    tabindex="2">
+                </div>
 
-        
-              </div><!-- End row -->
-                    
-           </div><!-- End Contact-form-container-->
-          </div><!-- End contact-conainer -->
-                      </div>
+                <div class="form-group py-4">
+                  <!-- <label class="form-label" id="messageLabel" for="message">Type your message here</label> -->
+                  <textarea rows="6" cols="60" name="message" class="form-control area-text" id="message"
+                    placeholder="Your message" tabindex="4"></textarea>
+                </div>
 
-                      <div class="contact-links d-flex justify-content-center flex-wrap pt-5">
-                        <a href="mailto:danniqueeg@gmail.com" class="white-background-text contact-link outfit-medium mx-xl-5 mx-1 mb-4">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" class="bi bi-envelope-at-fill me-1 mb-1" viewBox="0 0 16 16">
-                            <path d="M2 2A2 2 0 0 0 .05 3.555L8 8.414l7.95-4.859A2 2 0 0 0 14 2zm-2 9.8V4.698l5.803 3.546zm6.761-2.97-6.57 4.026A2 2 0 0 0 2 14h6.256A4.5 4.5 0 0 1 8 12.5a4.49 4.49 0 0 1 1.606-3.446l-.367-.225L8 9.586zM16 9.671V4.697l-5.803 3.546.338.208A4.5 4.5 0 0 1 12.5 8c1.414 0 2.675.652 3.5 1.671"/>
-                            <path d="M15.834 12.244c0 1.168-.577 2.025-1.587 2.025-.503 0-1.002-.228-1.12-.648h-.043c-.118.416-.543.643-1.015.643-.77 0-1.259-.542-1.259-1.434v-.529c0-.844.481-1.4 1.26-1.4.585 0 .87.333.953.63h.03v-.568h.905v2.19c0 .272.18.42.411.42.315 0 .639-.415.639-1.39v-.118c0-1.277-.95-2.326-2.484-2.326h-.04c-1.582 0-2.64 1.067-2.64 2.724v.157c0 1.867 1.237 2.654 2.57 2.654h.045c.507 0 .935-.07 1.18-.18v.731c-.219.1-.643.175-1.237.175h-.044C10.438 16 9 14.82 9 12.646v-.214C9 10.36 10.421 9 12.485 9h.035c2.12 0 3.314 1.43 3.314 3.034zm-4.04.21v.227c0 .586.227.8.581.8.31 0 .564-.17.564-.743v-.367c0-.516-.275-.708-.572-.708-.346 0-.573.245-.573.791"/>
-                          </svg>
-                          danniqueeg@gmail.com</a>
-                        <a href="https://linkedin.com/in/danniquedk" target="_blank" class="white-background-text contact-link outfit-medium mx-xl-5 mx-1 mb-4">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" class="bi bi-linkedin me-1 mb-1" viewBox="0 0 16 16">
-                            <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
-                          </svg>
-                          linkedin.com/danniquedk</a>
-                        <a href="https://github.com/dannique" target="_blank" class="white-background-text contact-link outfit-medium mx-xl-5 mx-1 mb-4">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" class="bi bi-github me-1 mb-1" viewBox="0 0 16 16">
-                            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
-                          </svg>
-                          github.com/Dannique</a>
-                                    </div>
-                    <div class="blue-circle contact-bottom-circle"></div>
+                <div class="text-center mt-4">
+                  <!-- <button type="submit" class="btn btn-mod btn-border btn-large">Send Message  <i class="bi bi-arrow-right arrow-icon"></i></button> -->
 
 
-</div>
+                  <button type="submit" class="btn btn-large outfit-regular" id="formBtn" onclick="send();">Send Message
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                      class="bi bi-arrow-right arrow-icon" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd"
+                        d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
+                    </svg>
+                  </button>
+
+                </div>
+
+              </form><!-- End form -->
+
+
+            </div><!-- End row -->
+
+          </div><!-- End Contact-form-container-->
+        </div><!-- End contact-conainer -->
+      </div>
+
+      <div class="contact-links d-flex justify-content-center flex-wrap pt-5">
+        <a href="mailto:danniqueeg@gmail.com"
+          class="white-background-text contact-link outfit-medium mx-xl-5 mx-1 mb-4">
+          <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor"
+            class="bi bi-envelope-at-fill me-1 mb-1" viewBox="0 0 16 16">
+            <path
+              d="M2 2A2 2 0 0 0 .05 3.555L8 8.414l7.95-4.859A2 2 0 0 0 14 2zm-2 9.8V4.698l5.803 3.546zm6.761-2.97-6.57 4.026A2 2 0 0 0 2 14h6.256A4.5 4.5 0 0 1 8 12.5a4.49 4.49 0 0 1 1.606-3.446l-.367-.225L8 9.586zM16 9.671V4.697l-5.803 3.546.338.208A4.5 4.5 0 0 1 12.5 8c1.414 0 2.675.652 3.5 1.671" />
+            <path
+              d="M15.834 12.244c0 1.168-.577 2.025-1.587 2.025-.503 0-1.002-.228-1.12-.648h-.043c-.118.416-.543.643-1.015.643-.77 0-1.259-.542-1.259-1.434v-.529c0-.844.481-1.4 1.26-1.4.585 0 .87.333.953.63h.03v-.568h.905v2.19c0 .272.18.42.411.42.315 0 .639-.415.639-1.39v-.118c0-1.277-.95-2.326-2.484-2.326h-.04c-1.582 0-2.64 1.067-2.64 2.724v.157c0 1.867 1.237 2.654 2.57 2.654h.045c.507 0 .935-.07 1.18-.18v.731c-.219.1-.643.175-1.237.175h-.044C10.438 16 9 14.82 9 12.646v-.214C9 10.36 10.421 9 12.485 9h.035c2.12 0 3.314 1.43 3.314 3.034zm-4.04.21v.227c0 .586.227.8.581.8.31 0 .564-.17.564-.743v-.367c0-.516-.275-.708-.572-.708-.346 0-.573.245-.573.791" />
+          </svg>
+          danniqueeg@gmail.com</a>
+        <a href="https://linkedin.com/in/danniquedk" target="_blank"
+          class="white-background-text contact-link outfit-medium mx-xl-5 mx-1 mb-4">
+          <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor"
+            class="bi bi-linkedin me-1 mb-1" viewBox="0 0 16 16">
+            <path
+              d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z" />
+          </svg>
+          linkedin.com/danniquedk</a>
+        <a href="https://github.com/dannique" target="_blank"
+          class="white-background-text contact-link outfit-medium mx-xl-5 mx-1 mb-4">
+          <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor"
+            class="bi bi-github me-1 mb-1" viewBox="0 0 16 16">
+            <path
+              d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8" />
+          </svg>
+          github.com/dannique</a>
+      </div>
+      <div class="w-100 text-center opacity-50 created-by">
+        <p> <span id="madeWith">created with</span> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+            fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+            <path
+              d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
+          </svg> <span id="byMe"> by Dannique</span>
+          <script>document.write(new Date().getFullYear())</script>
+        </p>
+      </div>
+      <div class="blue-circle contact-bottom-circle"></div>
+
+
+    </div>
 
 
 
 
-    </article>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"></script>
-      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-      <script>
-      //   AOS.init({
-      //     offset: 200,
-      //     duration: 1500
-      // });
-    </script>
-      <script src="scripts/functions.js" defer type="text/javascript"></script>
+  </article>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    //   AOS.init({
+    //     offset: 200,
+    //     duration: 1500
+    // });
+  </script>
+  <script src="scripts/functions.js" defer type="text/javascript"></script>
+  <script src="scripts/translations.js" defer type="text/javascript"></script>
 </body>
 
 </html>
