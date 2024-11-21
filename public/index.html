@@ -302,6 +302,8 @@
                   </div>
                 </div>
 
+                <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response" />
+
                 <div class="text-center mt-3">
                   <button type="submit" class="btn btn-large outfit-regular" id="formBtn">Send Message
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
@@ -311,10 +313,13 @@
                     </svg>
                   </button>
                   <div class="valid-feedback pt-3 outfit-medium success d-none" id="validSend">
-                    Your message has been sent!
+                    Your message has been sent! 🚀
                   </div>
                   <div class="invalid-feedback pt-3 outfit-medium unsuccessfull d-none" id="invalidSend">
                     Oops, your message is not send 😓. Please try again or reach out in a different way.
+                  </div>
+                  <div id="loadingSpinner" class="spinner-border text-light d-none mt-3" role="status">
+
                   </div>
                 </div>
               </form>
@@ -384,6 +389,7 @@
   </script>
   <script src="scripts/functions.js" defer type="text/javascript"></script>
   <script src="scripts/translations.js" defer type="text/javascript"></script>
+  <script src="https://www.google.com/recaptcha/api.js?render=6LcbgoUqAAAAANKiVoOO6ruvB3Db9xrLXDHZIwCP"></script>
 </body>
 
 </html>

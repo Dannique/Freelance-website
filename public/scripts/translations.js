@@ -98,7 +98,7 @@ $(function () {
       invalidName: "Vul uw naam in",
       invalidEmail: "Vul een geldig e-mailadres in",
       invalidMessage: "Vul een bericht in in het tekstvak.",
-      validSend: "Je bericht is verzonden!",
+      validSend: "Je bericht is verzonden! 🚀",
       invalidSend:
         "Oeps, je bericht is niet verzonden😓. Probeer het nog een keer.",
 

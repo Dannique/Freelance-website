@@ -39,84 +39,93 @@ $(document).ready(function () {
 });
 
 //FORM
-
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("contact-form");
+  const submitButton = document.getElementById("formBtn");
   const successMessage = document.getElementById("validSend");
   const failedMessage = document.getElementById("invalidSend");
-  let isSubmitted = false; // Flag to track if form has been submitted
+  const loadingSpinner = document.getElementById("loadingSpinner");
+  let isSubmitted = false; // Track form submission state
 
-  // Handle form submission
   form.addEventListener("submit", async (event) => {
-    event.preventDefault(); // Prevent default form submission
-    event.stopPropagation();
+    event.preventDefault();
 
-    isSubmitted = true; // Set the flag to true on form submission attempt
-
-    // Reset messages
+    // Reset messages and show spinner
     successMessage.classList.add("d-none");
     failedMessage.classList.add("d-none");
+    loadingSpinner.classList.remove("d-none");
+    submitButton.disabled = true;
 
-    // Perform Bootstrap-style validation
+    // validation
     if (!form.checkValidity()) {
-      form.classList.add("was-validated"); // Add validation styles
-      return; // Stop if validation fails
+      form.classList.add("was-validated");
+      loadingSpinner.classList.add("d-none");
+      submitButton.disabled = false;
+      return;
     }
 
-    // Gather form data
-    const formData = new FormData(form);
-    const formObject = Object.fromEntries(formData.entries());
+    // Generate reCAPTCHA token
+    grecaptcha.ready(() => {
+      grecaptcha
+        .execute("6LcbgoUqAAAAANKiVoOO6ruvB3Db9xrLXDHZIwCP", {
+          action: "submit",
+        })
+        .then(async (token) => {
+          document.getElementById("g-recaptcha-response").value = token;
 
-    try {
-      // Send form data via fetch
-      const response = await fetch("/", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formObject),
-      });
+          // Gather form data
+          const formData = new FormData(form);
+          const formObject = Object.fromEntries(formData.entries());
 
-      if (response.ok) {
-        // Show success message
-        successMessage.classList.remove("d-none");
-        successMessage.classList.add("d-block");
+          try {
+            const response = await fetch("/", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(formObject),
+            });
 
-        // Reset the form and validation state
-        form.reset();
-        const inputs = form.querySelectorAll(".form-control");
-        inputs.forEach((input) => {
-          input.classList.remove("is-valid", "is-invalid");
+            if (response.ok) {
+              successMessage.classList.remove("d-none");
+              successMessage.classList.add("d-block");
+              form.reset();
+              resetValidation(form); // Reset validation state
+            } else {
+              failedMessage.classList.remove("d-none");
+              failedMessage.classList.add("d-block");
+            }
+          } catch (error) {
+            failedMessage.classList.remove("d-none");
+            failedMessage.classList.add("d-block");
+            console.error("Error:", error);
+          } finally {
+            // Hide spinner and re-enable button
+            loadingSpinner.classList.add("d-none");
+            submitButton.disabled = false;
+          }
         });
-        form.classList.remove("was-validated");
-        isSubmitted = false; // Reset the flag after successful submission
-      } else {
-        // Show failure message
-        failedMessage.classList.remove("d-none");
-        failedMessage.classList.add("d-block");
-      }
-    } catch (error) {
-      // Handle fetch/network error
-      failedMessage.classList.remove("d-none");
-      failedMessage.classList.add("d-block");
-      console.error("Error:", error);
-    }
+    });
   });
 
-  // Add real-time validation for valid inputs only
+  // Real-time validation
   form.addEventListener("input", (event) => {
     const target = event.target;
 
-    // Show valid state only if input is valid
     if (target.validity.valid) {
       target.classList.remove("is-invalid");
       target.classList.add("is-valid");
-    }
-
-    // Show invalid state only after submission attempt
-    if (isSubmitted && !target.validity.valid) {
+    } else if (isSubmitted) {
       target.classList.remove("is-valid");
       target.classList.add("is-invalid");
     }
   });
+
+  // Helper function to reset validation state
+  const resetValidation = (form) => {
+    const inputs = form.querySelectorAll(".form-control");
+    inputs.forEach((input) => {
+      input.classList.remove("is-valid", "is-invalid");
+    });
+    form.classList.remove("was-validated");
+    isSubmitted = false;
+  };
 });
