@@ -67,7 +67,7 @@ body::-webkit-scrollbar-thumb {
   }
 }
 ::selection {
-  background-color: #46aecb;
+  background-color: #46c4cb;
   color: #22133f;
 }
 
@@ -209,6 +209,10 @@ a {
   margin: auto !important;
 }
 
+.grecaptcha-badge {
+  visibility: hidden;
+}
+
 /************** NAVBAR *******************/
 .bg-body-tertiary {
   background-color: transparent !important;
@@ -221,10 +225,11 @@ a {
 
 .navbar-expand-lg .navbar-nav .nav-link {
   color: rgba(250, 251, 253, 0.76) !important;
-  font-size: 1.7em;
+  font-size: 1.6em;
   box-shadow: none !important;
   border: none !important;
   letter-spacing: 1px;
+  font-weight: 300;
 }
 
 .navbar-expand-lg .navbar-nav .nav-link:hover {
@@ -253,8 +258,7 @@ a {
 
 .navbar-scrolled {
   backdrop-filter: blur(20px);
-  padding-top: 20px !important;
-  padding-bottom: 15px !important;
+  padding-top: 8px !important;
   background: radial-gradient(circle, rgba(0, 8, 36, 0.6) 56%, rgba(26, 31, 64, 0.6) 86%, rgba(27, 28, 71, 0.45) 96%, rgba(56, 35, 74, 0.55) 100%) !important;
 }
 
@@ -266,7 +270,9 @@ a {
 .dropdown-menu[data-bs-popper] {
   right: 0;
   left: auto !important;
-  background: transparent !important;
+  background: rgba(15, 18, 50, 0.8) !important;
+  border: none;
+  margin-top: 14px;
 }
 
 .dropdown-toggle {
@@ -278,7 +284,7 @@ a {
   cursor: pointer;
 }
 
-.dropdown-itemhover {
+.dropdown-item:hover {
   background: linear-gradient(180deg, rgba(14, 16, 112, 0.5) 0%, rgba(57, 8, 80, 0.59) 45%, rgba(128, 21, 131, 0.38) 100%) !important;
 }
 
@@ -339,6 +345,7 @@ a {
 }
 .services-wrapper .service-wrapper .service-container .service-text {
   font-size: 0.98em;
+  letter-spacing: 0.5px;
 }
 
 .web-dev-container-1 {
@@ -389,33 +396,6 @@ a {
 }
 
 /******** PRICING ************/
-.pricing-container {
-  max-width: 550px;
-  border-width: 3px;
-  border-style: solid;
-  border-image: linear-gradient(to bottom, rgba(212, 172, 250, 0.8823529412) 0%, #6f75a9 40%, #2b2d74 100%) 1;
-  background: linear-gradient(180deg, rgba(14, 16, 112, 0.3) 0%, rgba(57, 8, 80, 0.29) 45%, rgba(128, 21, 131, 0.18) 78%);
-  padding: 10px 15px 10px 25px;
-}
-.pricing-container .pricing-title {
-  font-size: 2rem;
-}
-.pricing-container .price {
-  letter-spacing: 1.7px;
-  font-size: 1.6rem;
-  font-weight: 600 !important;
-}
-.pricing-container .price-color {
-  color: #bcd5ff;
-}
-.pricing-container .price-check {
-  font-size: 0.9em;
-}
-.pricing-container .price-check .check-icon {
-  width: 15px;
-  margin-right: 10px;
-}
-
 .top-pricing-circle {
   left: -250px;
   height: 900px;
@@ -426,7 +406,6 @@ a {
   margin-top: 280px;
 }
 
-/******************** EXTRA'S ***********************/
 /******************** CONTACT ***********************/
 .contact-links {
   font-size: 1.3em;
@@ -488,6 +467,10 @@ a {
   font-family: "Roboto", sans-serif;
   transition: background-color 5000s ease-in-out 0s;
   box-shadow: none;
+}
+.contactform-container .form .success {
+  font-size: 1.2em;
+  transition: 0.3s;
 }
 
 .btn {

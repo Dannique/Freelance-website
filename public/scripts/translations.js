@@ -27,47 +27,21 @@ $(function () {
     contentwr: $("#contentwr").text(),
     redesignTitle: $("#redesignTitle").text(),
     redesign: $("#redesign").text(),
+    quoteButton: $("#quoteButton").text(),
+    ctaServices: $("#ctaServices").html(),
     // Form
     namePlaceholder: $("#name").attr("placeholder"),
     emailPlaceholder: $("#email").attr("placeholder"),
     messagePlaceholder: $("#message").attr("placeholder"),
     formBtn: $("#formBtn").text(),
+    invalidName: $("#invalidName").text(),
+    invalidEmail: $("#invalidEmail").text(),
+    invalidMessage: $("#invalidMessage").text(),
+    validSend: $("#validSend").text(),
+    invalidSend: $("#invalidSend").text(),
 
     madeWith: $("#madeWith").text(),
     byMe: $("#byMe").text(),
-
-    // extrastxt: $("#extrastxt").text(),
-    // pricingTitle: $("#pricingTitle").text(),
-    // "1page": $("#1page").text(),
-    // "8pages": $("#8pages").text(),
-    // "10pages": $("#10pages").text(),
-    // "1change": $("#1change").text(),
-    // customUI: $("#customUI").text(),
-    // socialButtons: $("#socialButtons").text(),
-    // responsive: $("#responsive").text(),
-    // hosting: $("#hosting").text(),
-    // from: $("#from").text(),
-    // illustrations: $("#illustrations").text(),
-    // illustrationsStock: $("#illustrationsStock").text(),
-    // integration: $("#integration").text(),
-    // seo: $("#seo").text(),
-    // registration: $("#registration").text(),
-    // form: $("#form").text(),
-    // support: $("#support").text(),
-    // changes: $("#changes").text(),
-    // blog: $("#blog").text(),
-    // "10pages": $("#10pages").text(),
-    // pages: $("#pages").text(),
-    // costumUIUX: $("#costumUIUX").text(),
-    // depthSeo: $("#depthSeo").text(),
-    // blogList: $("#blogList").text(),
-    // extraPages: $("#extraPages").text(),
-    // newsletter: $("#newsletter").text(),
-    // calendar: $("#calendar").text(),
-    // languages: $("#languages").text(),
-    // mode: $("#mode").text(),
-    // extension: $("#extension").text(),
-    // "3rdParty": $("#3rdParty").text(),
   };
 
   // Translations object
@@ -92,49 +66,16 @@ $(function () {
         "Maatwerkwebsite voor een outsourcingbedrijf. Gemaakt met PHP, JavaScript, HTML en CSS.",
       danniqueme:
         "Mijn portfolio website. Gemaakt met Javascript, HTML, SCSS, en React.",
-      // pricingTitle: "Prijzen",
-      // "1page": "1 landingspagina",
-      // "8pages": "Tot 8 pagina’s",
-      // "10pages": "Tot 10 pagina’s",
-      // "1change": "1 wijziging",
-      // customUI: "Op maat gemaakte UI-ontwerp",
-      // socialButtons: "Social media buttons en icons",
-      // responsive: "Responsief op desktop, tablet en mobiel",
-      // hosting: "Hulp bij het instellen van hosting en <br> domeinnaam",
-      // from: "Vanaf",
-      // illustrations: "Illustraties",
-      // illustrationsStock: "Illustraties en stock foto’s",
-      // integration: "integratie",
-      // seo: "Essentiële SEO",
-      // registration: "Google registratie",
-      // form: "Contactformulier",
-      // support: "dagen ondersteuning",
-      // changes: "wijzigingen",
-      // blog: "en blog",
-      // "10pages": "Tot 10 pagina’s",
-      // pages: "15+ pagina’s",
-      // costumUIUX: "Op maat gemaakte UI/UX ontwerp",
-      // depthSeo: "Diepgaande SEO",
-      // blogList:
-      //   "Contact formulier en blog <br> + 1 extra van de onderstaande lijst*",
-      // extrastxt:
-      //   "Als je geïnteresseerd bent in extra’s toe te voegen, is dat natuurlijk mogelijk. Bijvoorbeeld, het toevoegen van extra pagina's. Als jouw gewenste functie niet wordt vermeld, sta ik er zeker voor open. Denk je aan een eCommerce-site met authenticatie en integratie van een betalingsgateway? Laten we erover praten!",
-      // extraPages: "Extra pagina's",
-      // newsletter: "Nieuwsbriefinschrijving",
-      // calendar: "Evenementenkalender",
-      // languages: "Ondersteuning van meerdere talen *",
-      // mode: "Licht/donkere modus optie",
-      // extension: "Extentie van ondersteuning",
-      // "3rdParty": "Andere integratie van derden",
+
       contactText:
-        "Interesse of vragen? Neem vrijblijvend contact op. Stuur me een e-mail en we kunnen ook bellen via platforms zoals Teams, Meet, WhatsApp, of elk ander platform dat voor jou handig is. Ik kijk ernaar uit om van je te horen en samen iets moois te creëren!",
+        "Interesse, vragen of wil je een offerte? Neem vrijblijvend contact op. Ik kijk ernaar uit om van je te horen en samen iets moois te creëren!",
       //Services
       websiteDesignTitle: "Maatwerk Website Ontwerp & Ontwikkeling",
       websiteDesign:
         "Het ontwerpen en ontwikkelen van responsieve, merkgerichte websites, met of zonder WordPress, op maat gemaakt met code zoals HTML, CSS, JavaScript, React of PHP, afgestemd op jouw behoeften.",
       EcommerceTitle: "E-commerce Oplossingen",
       Ecommerce:
-        "Creëer gebruiksvriendelijke, veilige online winkels met WooCommerce of Shopify, ontworpen om jouw verkoop te stimuleren met een visueel aantrekkelijke en effectieve e-commerce site.",
+        "Ik creëer gebruiksvriendelijke, veilige online winkels met WooCommerce of Shopify, ontworpen om jouw verkoop te stimuleren met een visueel aantrekkelijke en effectieve e-commerce site.",
       SEOTitle: "SEO Optimalisatie",
       SEO: "Verbeter de vindbaarheid van je website in zoekmachines door middel van on-page SEO, zoekwoordoptimalisatie en prestatieverbeteringen voor hogere rankings.",
       maintenanceTitle: "Website Onderhoud",
@@ -142,15 +83,24 @@ $(function () {
         "Zorg voor regelmatige updates, verbeterde prestaties, versterkte beveiliging en de toepassing van SEO-methodes om de website geoptimaliseerd en veilig te houden.",
       contentTitle: "Content Schrijven voor Websites",
       contentwr:
-        "Helder en boeiende content creëren die aansluit bij jouw doelgroep en de SEO van je website verbetert, zodat jouw boodschap opvalt en meer mensen bereikt.",
+        "Helder en boeiende content die aansluit bij jouw doelgroep en de SEO van je website verbetert, zodat jouw boodschap opvalt en meer mensen bereikt.",
       redesignTitle: "Website Vernieuwing & Revitalisatie",
       redesign:
         "Geef verouderde websites een frisse, verfijnde uitstraling en verbeterde functionaliteit, wat resulteert in een betere gebruikerservaring en een professionelere online uitstraling.",
+      quoteButton: "Offerte Aanvragen",
+      ctaServices:
+        "Geïnteresseerd in een van deze diensten? <br/> Ik help graag om jouw websitevisie tot leven te brengen!",
       //Form
-      namePlaceholder: "Je Naam",
-      emailPlaceholder: "Je Email",
-      messagePlaceholder: "Je Bericht",
+      namePlaceholder: "Je naam",
+      emailPlaceholder: "Je email",
+      messagePlaceholder: "Je bericht",
       formBtn: "Bericht Verzenden",
+      invalidName: "Vul uw naam in",
+      invalidEmail: "Vul een geldig e-mailadres in",
+      invalidMessage: "Vul een bericht in in het tekstvak.",
+      validSend: "Je bericht is verzonden!",
+      invalidSend:
+        "Oeps, je bericht is niet verzonden😓. Probeer het nog een keer.",
 
       madeWith: "Gemaakt met",
       byMe: "door Dannique",
@@ -190,45 +140,21 @@ $(function () {
     $("#contentwr").text(text.contentwr);
     $("#redesignTitle").text(text.redesignTitle);
     $("#redesign").text(text.redesign);
+    $("#quoteButton").text(text.quoteButton);
+    $("#ctaServices").html(text.ctaServices);
     //Form
     $("#name").attr("placeholder", text.namePlaceholder);
     $("#email").attr("placeholder", text.emailPlaceholder);
     $("#message").attr("placeholder", text.messagePlaceholder);
     $("#formBtn").text(text.formBtn);
+    $("#invalidName").text(text.invalidName);
+    $("#invalidEmail").text(text.invalidEmail);
+    $("#invalidMessage").text(text.invalidMessage);
+    $("#validSend").text(text.validSend);
+    $("#invalidSend").text(text.invalidSend);
 
     $("#madeWith").text(text.madeWith);
     $("#byMe").text(text.byMe);
-
-    // $("#1page").text(text["1page"]);
-    // $("#8pages").text(text["8pages"]);
-    // $("#10pages").text(text["10pages"]);
-    // $("#1change").text(text["1change"]);
-    // $("#customUI").text(text.customUI);
-    // $("#socialButtons").text(text.socialButtons);
-    // $("#responsive").text(text.responsive);
-    // $("#hosting").html(text.hosting);
-    // $("#from").text(text.from);
-    // $("#illustrations").text(text.illustrations);
-    // $("#illustrationsStock").text(text.illustrationsStock);
-    // $("#integration").text(text.integration);
-    // $("#seo").text(text.seo);
-    // $("#registration").text(text.registration);
-    // $("#form").text(text.form);
-    // $("#support").text(text.support);
-    // $("#changes").text(text.changes);
-    // $("#blog").text(text.blog);
-    // $("#10pages").text(text["10pages"]);
-    // $("#pages").text(text.pages);
-    // $("#costumUIUX").text(text.costumUIUX);
-    // $("#depthSeo").text(text.depthSeo);
-    // $("#blogList").html(text.blogList);
-    // $("#extraPages").html(text.extraPages);
-    // $("#newsletter").text(text.newsletter);
-    // $("#calendar").text(text.calendar);
-    // $("#languages").text(text.languages);
-    // $("#mode").text(text.mode);
-    // $("#extension").text(text.extension);
-    // $("#3rdParty").text(text["3rdParty"]);
 
     // Disable the current language link
     $(".language-option").removeAttr("disabled");

@@ -99,7 +99,7 @@ body {
 }
 
 ::selection {
-  background-color: #46aecb;
+  background-color: #46c4cb;
   color: #22133f;
 }
 
@@ -237,6 +237,9 @@ a {
   max-width: 1430px !important;
   margin: auto !important;
 }
+.grecaptcha-badge {
+  visibility: hidden;
+}
 
 // .tooltip{
 //   font-family: "Outfit", sans-serif!important;
@@ -270,10 +273,11 @@ a {
 }
 .navbar-expand-lg .navbar-nav .nav-link {
   color: rgba(250, 251, 253, 0.76) !important;
-  font-size: 1.7em;
+  font-size: 1.6em;
   box-shadow: none !important;
   border: none !important;
   letter-spacing: 1px;
+  font-weight: 300;
 }
 .navbar-expand-lg .navbar-nav .nav-link:hover {
   color: rgba(250, 251, 253, 1) !important;
@@ -301,8 +305,8 @@ a {
 
 .navbar-scrolled {
   backdrop-filter: blur(20px);
-  padding-top: 20px !important;
-  padding-bottom: 15px !important;
+  padding-top: 8px !important;
+  // padding-bottom: 15px !important;
   background: radial-gradient(
     circle,
     rgba(0, 8, 36, 0.6) 56%,
@@ -318,7 +322,9 @@ a {
 .dropdown-menu[data-bs-popper] {
   right: 0;
   left: auto !important;
-  background: transparent !important;
+  background: rgba(15, 18, 50, 0.8) !important;
+  border: none;
+  margin-top: 14px;
 }
 .dropdown-toggle {
   border: none !important;
@@ -328,7 +334,7 @@ a {
   cursor: pointer;
 }
 .dropdown-item {
-  &hover {
+  &:hover {
     background: $gradient-color-background-1 !important;
   }
 }
@@ -398,6 +404,7 @@ a {
       height: 225px;
       .service-text {
         font-size: 0.98em;
+        letter-spacing: 0.5px;
       }
     }
   }
@@ -463,32 +470,6 @@ a {
 
 /******** PRICING ************/
 
-.pricing-container {
-  max-width: 550px;
-  border-width: 3px;
-  border-style: solid;
-  border-image: $gradient-color-bottom;
-  background: $gradient-color-background;
-  padding: 10px 15px 10px 25px;
-  .pricing-title {
-    font-size: 2rem;
-  }
-  .price {
-    letter-spacing: 1.7px;
-    font-size: 1.6rem;
-    font-weight: 600 !important;
-  }
-  .price-color {
-    color: #bcd5ff;
-  }
-  .price-check {
-    font-size: 0.9em;
-    .check-icon {
-      width: 15px;
-      margin-right: 10px;
-    }
-  }
-}
 .top-pricing-circle {
   left: -250px;
   height: 900px;
@@ -497,43 +478,6 @@ a {
   right: -30px;
   margin-top: 280px;
 }
-
-/******************** EXTRA'S ***********************/
-// .extras-wrapper{
-//     font-size: .9em;
-// }
-// .extras-text-container{
-//     max-width: 530px;
-// }
-
-// .extras-text-wrapper{
-//     max-height: 200px;
-// }
-// .extras-text{
-//     height:fit-content;
-// }
-// .long-border{
-//     min-height: 130px;
-// }
-
-// .line-transparent{
-//     margin: -6px 0;
-// }
-
-// .extras-list-container{
-// font-size: .8em!important;
-// }
-
-// .extras-item{
-//   height: 20px;
-// }
-// .extras-list-container{
-//   padding-top: 40px;
-// }
-
-// .list-span{
-//     padding-top: 5px;
-// }
 
 /******************** CONTACT ***********************/
 
@@ -602,6 +546,10 @@ a {
       font-family: "Roboto", sans-serif;
       transition: background-color 5000s ease-in-out 0s;
       box-shadow: none;
+    }
+    .success {
+      font-size: 1.2em;
+      transition: 0.3s;
     }
   }
 }
