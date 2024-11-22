@@ -14,7 +14,7 @@ $(function () {
     teamforge: $("#teamforge").text(),
     danniqueme: $("#danniqueme").text(),
     contactText: $("#contactText").text(),
-    //Services
+    // Services
     websiteDesignTitle: $("#websiteDesignTitle").text(),
     websiteDesign: $("#websiteDesign").text(),
     EcommerceTitle: $("#EcommerceTitle").text(),
@@ -39,7 +39,6 @@ $(function () {
     invalidMessage: $("#invalidMessage").text(),
     validSend: $("#validSend").text(),
     invalidSend: $("#invalidSend").text(),
-
     madeWith: $("#madeWith").text(),
     byMe: $("#byMe").text(),
   };
@@ -66,10 +65,9 @@ $(function () {
         "Maatwerkwebsite voor een outsourcingbedrijf. Gemaakt met PHP, JavaScript, HTML en CSS.",
       danniqueme:
         "Mijn portfolio website. Gemaakt met Javascript, HTML, SCSS, en React.",
-
       contactText:
         "Interesse, vragen of wil je een offerte? Neem vrijblijvend contact op. Ik kijk ernaar uit om van je te horen en samen iets moois te creëren!",
-      //Services
+      // Services
       websiteDesignTitle: "Maatwerk Website Ontwerp & Ontwikkeling",
       websiteDesign:
         "Het ontwerpen en ontwikkelen van responsieve, merkgerichte websites, met of zonder WordPress, op maat gemaakt met code zoals HTML, CSS, JavaScript, React of PHP, afgestemd op jouw behoeften.",
@@ -90,7 +88,7 @@ $(function () {
       quoteButton: "Offerte Aanvragen",
       ctaServices:
         "Geïnteresseerd in een van deze diensten? <br/> Ik help graag om jouw websitevisie tot leven te brengen!",
-      //Form
+      // Form
       namePlaceholder: "Je naam",
       emailPlaceholder: "Je email",
       messagePlaceholder: "Je bericht",
@@ -101,17 +99,17 @@ $(function () {
       validSend: "Je bericht is verzonden! 🚀",
       invalidSend:
         "Oeps, je bericht is niet verzonden😓. Probeer het nog een keer.",
-
       madeWith: "Gemaakt met",
       byMe: "door Dannique",
     },
   };
 
+  // Function to switch language
   function switchLanguage(lang) {
     const text =
       lang === "en" ? defaultText : translations[lang] || defaultText;
 
-    // Update text content for specific elements with predefined translations
+    // Update text content for specific elements
     $("#title").text(text.title);
     $("#navItemNl").text(text.navItemNl);
     $("#title2").text(text.title2);
@@ -124,10 +122,7 @@ $(function () {
     $("#beinema").text(text.beinema);
     $("#teamforge").text(text.teamforge);
     $("#danniqueme").text(text.danniqueme);
-    $("#pricingTitle").text(text.pricingTitle);
-    $("#extrastxt").text(text.extrastxt);
     $("#contactText").text(text.contactText);
-    //Services
     $("#websiteDesignTitle").text(text.websiteDesignTitle);
     $("#websiteDesign").text(text.websiteDesign);
     $("#EcommerceTitle").text(text.EcommerceTitle);
@@ -142,7 +137,6 @@ $(function () {
     $("#redesign").text(text.redesign);
     $("#quoteButton").text(text.quoteButton);
     $("#ctaServices").html(text.ctaServices);
-    //Form
     $("#name").attr("placeholder", text.namePlaceholder);
     $("#email").attr("placeholder", text.emailPlaceholder);
     $("#message").attr("placeholder", text.messagePlaceholder);
@@ -152,37 +146,16 @@ $(function () {
     $("#invalidMessage").text(text.invalidMessage);
     $("#validSend").text(text.validSend);
     $("#invalidSend").text(text.invalidSend);
-
     $("#madeWith").text(text.madeWith);
     $("#byMe").text(text.byMe);
-
-    // Disable the current language link
-    $(".language-option").removeAttr("disabled");
-    $("#language-" + lang).attr("disabled", "disabled");
-
-    // const text =
-    //   lang === "en" ? defaultText : translations[lang] || defaultText;
-
-    // Update text content for each element
-    // elementIds.forEach((id) => {
-    //   const translatedText = text[id];
-    //   $("#" + id).text(translatedText || defaultText[id]);
-    // });
-
-    // Disable the current language link
-    $(".language-option").removeAttr("disabled");
-    $("#language-" + lang).attr("disabled", "disabled");
   }
 
+  // Detect route and switch language
+  const path = window.location.pathname;
+  const lang = path === "/nl" ? "nl" : "en";
+  switchLanguage(lang);
+
   // Event handlers for language selection
-  $("#language-en").click(function () {
-    switchLanguage("en");
-  });
-
-  $("#language-nl").click(function () {
-    switchLanguage("nl");
-  });
-
-  // Set default language (English)
-  switchLanguage("en");
+  $("#language-en").click(() => (window.location.href = "/"));
+  $("#language-nl").click(() => (window.location.href = "/nl"));
 });
