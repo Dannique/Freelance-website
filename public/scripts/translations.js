@@ -46,7 +46,7 @@ $(function () {
   // Translations object
   const translations = {
     nl: {
-      title: "Welkom",
+      title: "Hoi!",
       navItemNl: "Services",
       title2: "Mijn naam is Dannique.",
       title3: "Ik ben een web ontwikkelaar.",
@@ -68,7 +68,7 @@ $(function () {
       contactText:
         "Interesse, vragen of wil je een offerte? Neem vrijblijvend contact op. Ik kijk ernaar uit om van je te horen en samen iets moois te creëren!",
       // Services
-      websiteDesignTitle: "Maatwerk Website Ontwerp & Ontwikkeling",
+      websiteDesignTitle: "Website Ontwerp & Ontwikkeling",
       websiteDesign:
         "Het ontwerpen en ontwikkelen van responsieve, merkgerichte websites, met of zonder WordPress, op maat gemaakt met code zoals HTML, CSS, JavaScript, React of PHP, afgestemd op jouw behoeften.",
       EcommerceTitle: "E-commerce Oplossingen",

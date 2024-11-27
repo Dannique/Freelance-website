@@ -182,7 +182,7 @@ a {
   background-color: rgba(126, 206, 243, 0.25);
   box-shadow: 0 0 15px 0 #71b47a;
   filter: blur(200px);
-  position: absolute;
+  position: fixed;
   z-index: -1000;
 }
 
@@ -193,7 +193,7 @@ a {
   background-color: rgba(210, 143, 241, 0.25);
   box-shadow: 0 0 15px 0 #71b47a;
   filter: blur(200px);
-  position: absolute;
+  position: fixed;
   z-index: -1000;
 }
 
@@ -218,14 +218,29 @@ a {
   background-color: transparent !important;
 }
 
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-nav {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+}
+
 .navbar-brand {
   color: rgba(250, 251, 253, 0.76) !important;
   border: none !important;
+  padding-left: 20px;
 }
 
 .navbar-expand-lg .navbar-nav .nav-link {
   color: rgba(250, 251, 253, 0.76) !important;
   font-size: 1.6em;
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
   box-shadow: none !important;
   border: none !important;
   letter-spacing: 1px;
@@ -260,6 +275,17 @@ a {
   backdrop-filter: blur(20px);
   padding-top: 8px !important;
   background: radial-gradient(circle, rgba(0, 8, 36, 0.6) 56%, rgba(26, 31, 64, 0.6) 86%, rgba(27, 28, 71, 0.45) 96%, rgba(56, 35, 74, 0.55) 100%) !important;
+}
+.navbar-scrolled .dropdown-menu[data-bs-popper] {
+  margin-top: 8px;
+}
+
+.language-wrapper {
+  width: 160px;
+  display: flex;
+  justify-content: end;
+  padding-right: 20px;
+  margin-left: auto;
 }
 
 .flag {
@@ -329,23 +355,35 @@ a {
 
 /************** INTRO *************/
 .services-wrapper {
-  max-width: min-content;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   text-align: center;
+  max-width: 100%;
 }
-.services-wrapper .service-wrapper .service-icon {
-  max-width: 130px;
-  margin-bottom: -90px;
-}
-.services-wrapper .service-wrapper .commerce-icon {
-  transform: rotate(-0.05turn);
+.services-wrapper .service-wrapper {
+  flex: 1 1 calc(33.333% - 2rem);
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 1rem;
 }
 .services-wrapper .service-wrapper .service-container {
-  width: 420px;
-  height: 225px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  width: 410px;
 }
 .services-wrapper .service-wrapper .service-container .service-text {
   font-size: 0.98em;
   letter-spacing: 0.5px;
+}
+.services-wrapper .service-wrapper .service-icon {
+  max-width: 130px;
+  margin-bottom: -90px;
+  z-index: 800;
 }
 
 .web-dev-container-1 {
@@ -396,33 +434,9 @@ a {
 }
 
 /******** PRICING ************/
-.top-pricing-circle {
-  left: -250px;
-  height: 900px;
-}
-
-.pricing-circle {
-  right: -30px;
-  margin-top: 280px;
-}
-
 /******************** CONTACT ***********************/
 .contact-links {
   font-size: 1.3em;
-}
-
-.contact-top-circle {
-  left: -280px;
-  margin-top: -200px;
-  opacity: 5%;
-}
-
-.contact-bottom-circle {
-  width: 90vw;
-  height: 70px;
-  right: 10px;
-  background-color: rgba(210, 143, 241, 0.2);
-  overflow: hidden;
 }
 
 .contact-link:hover {
@@ -535,14 +549,11 @@ a {
   }
 }
 @media (max-width: 1200px) {
-  .web-dev-container-1 {
-    max-width: 420px;
-  }
-  .portfolio-img {
-    max-width: 400px;
-  }
   .flag {
     max-width: 40px;
+  }
+  .introtext-header {
+    font-size: 1.2em;
   }
 }
 @media (max-width: 1183px) {
@@ -550,13 +561,32 @@ a {
     max-width: 480px;
     padding: 10px 10px 10px 15px;
   }
-}
-@media (min-width: 992px) {
-  .navbar-expand-lg .navbar-collapse {
+  .logo {
+    max-width: 130px;
+  }
+  .navbar-expand-lg .navbar-nav .nav-link {
+    font-size: 1.4em;
+  }
+  .portfolio .portfolio-img {
+    max-width: 380px;
+  }
+  .left-container {
+    margin: 50px 0 0 0;
+  }
+  .right-container {
+    margin: 50px 0 0;
+  }
+  .portfolio-items {
     justify-content: center;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
   }
 }
 @media (max-width: 992px) {
+  .navbar-expand-lg .navbar-collapse {
+    justify-content: center;
+  }
   .navbar-scrolled {
     backdrop-filter: blur(3px);
   }
@@ -565,6 +595,7 @@ a {
   }
   .navbar-expand-lg .navbar-nav .nav-link {
     font-size: 1.4em;
+    color: rgba(249, 249, 250, 0.76) !important;
   }
   .navbar > .container-fluid {
     justify-content: initial !important;
@@ -575,8 +606,15 @@ a {
   .navbar-toggler {
     margin-right: 20px;
   }
+  .intro-link {
+    padding-top: 20px;
+  }
+  .language-wrapper {
+    margin-top: -50px;
+  }
   .niek-avatar {
     max-width: 200px;
+    margin-left: 150px;
   }
   .title {
     font-size: 2.5rem;
@@ -623,8 +661,20 @@ a {
     justify-content: center !important;
     align-items: center;
   }
-  .portfolio-img {
-    max-width: 320px;
+  .service-wrapper {
+    flex: 1 1 100%;
+  }
+  .portfolio .portfolio-img {
+    max-width: 300px;
+  }
+  .portfolio .left-container {
+    margin-left: 0;
+  }
+  .portfolio .right-container {
+    margin-right: 0;
+  }
+  .niek-avatar {
+    margin-left: 30px;
   }
 }
 @media (max-width: 768px) {
@@ -653,31 +703,7 @@ a {
     text-align: center;
   }
   .title {
-    font-size: 2.8rem;
-  }
-  .introtext-header {
-    font-size: 1.2em;
-  }
-  .left-container {
-    margin: 50px 0 0 0;
-  }
-  .right-container {
-    margin: 50px 0 0;
-  }
-  .portfolio-items {
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-  }
-  .pricing-container .price-check {
-    font-size: 0.85em;
-    margin-bottom: 10px;
-  }
-  .pricing-title {
-    font-size: 1.7rem !important;
-  }
-  .price {
-    font-size: 1.4rem !important;
+    font-size: 2.3rem;
   }
 }
 @media only screen and (max-width: 576px) {
@@ -688,6 +714,12 @@ a {
   .left-container {
     display: flex;
     flex-direction: column-reverse;
+  }
+  .portfolio .portfolio-img {
+    max-width: 370px;
+  }
+  .portfolio .portfolio-link {
+    font-size: 1.2em;
   }
   .portfolio-text {
     text-align: center;
@@ -705,13 +737,16 @@ a {
   h2 {
     font-size: 2.7rem;
   }
+  .service-container {
+    width: 100% !important;
+  }
 }
 @media only screen and (max-width: 500px) {
   .form-title {
     font-size: 20px;
   }
   .title {
-    font-size: 2rem;
+    font-size: 1.6rem;
   }
   .niek-avatar-2 {
     max-width: 150px;
@@ -726,17 +761,29 @@ a {
 }
 @media (max-width: 460px) {
   .web-dev-container-1 {
-    margin: 0 10px;
+    margin: 0;
   }
 }
 @media (max-width: 412px) {
   .long-border {
     min-height: 170px;
   }
+  .service-subtitle {
+    font-size: 1.1em;
+  }
+  .services-wrapper .service-wrapper .service-container .service-text {
+    font-size: 0.9em;
+  }
+  .header {
+    padding: 150px 0 40px;
+  }
 }
 @media (max-width: 382px) {
   .long-border {
     min-height: 190px;
+  }
+  .tag {
+    font-size: 1.5rem;
   }
 }
 

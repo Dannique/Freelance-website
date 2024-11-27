@@ -211,7 +211,7 @@ a {
   background-color: rgba(126, 206, 243, 0.25);
   box-shadow: 0 0 15px 0 #71b47a;
   filter: blur(200px);
-  position: absolute;
+  position: fixed;
   z-index: -1000;
 }
 
@@ -222,7 +222,7 @@ a {
   background-color: rgba(210, 143, 241, 0.25);
   box-shadow: 0 0 15px 0 #71b47a;
   filter: blur(200px);
-  position: absolute;
+  position: fixed;
   z-index: -1000;
 }
 
@@ -267,13 +267,29 @@ a {
 .bg-body-tertiary {
   background-color: transparent !important;
 }
+.navbar {
+  display: flex;
+  justify-content: space-between; // Ensure logo, links, and dropdown are spaced correctly
+  align-items: center;
+}
+
+.navbar-nav {
+  display: flex;
+  justify-content: center; // Center the links in the navbar
+  flex-grow: 1; // Allow links to occupy space between logo and dropdown
+}
+
 .navbar-brand {
   color: rgba(250, 251, 253, 0.76) !important;
   border: none !important;
+  padding-left: 20px;
 }
+
 .navbar-expand-lg .navbar-nav .nav-link {
   color: rgba(250, 251, 253, 0.76) !important;
   font-size: 1.6em;
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
   box-shadow: none !important;
   border: none !important;
   letter-spacing: 1px;
@@ -314,6 +330,16 @@ a {
     rgba(27, 28, 71, 0.45) 96%,
     rgba(56, 35, 74, 0.55) 100%
   ) !important;
+  .dropdown-menu[data-bs-popper] {
+    margin-top: 8px;
+  }
+}
+.language-wrapper {
+  width: 160px;
+  display: flex;
+  justify-content: end;
+  padding-right: 20px;
+  margin-left: auto;
 }
 .flag {
   max-width: 50px;
@@ -389,23 +415,36 @@ a {
 
 /************** INTRO *************/
 .services-wrapper {
-  max-width: min-content;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   text-align: center;
+  max-width: 100%;
+
   .service-wrapper {
-    .service-icon {
-      max-width: 130px;
-      margin-bottom: -90px;
-    }
-    .commerce-icon {
-      transform: rotate(-0.05turn);
-    }
+    flex: 1 1 calc(33.333% - 2rem); // Three items per row with spacing
+    max-width: 420px; // Prevent boxes from growing too large
+    display: flex; // Enable Flexbox
+    flex-direction: column; // Stack content vertically
+    justify-content: space-between; // Space out content for uniform height
+    margin: 1rem; // Add consistent spacing between items
+
     .service-container {
-      width: 420px;
-      height: 225px;
+      display: flex; // Use Flexbox for consistent height inside the container
+      flex-direction: column;
+      justify-content: space-between; // Ensure content is spaced properly
+      height: 100%; // Ensure all boxes are equal height
+      width: 410px;
+
       .service-text {
         font-size: 0.98em;
         letter-spacing: 0.5px;
       }
+    }
+    .service-icon {
+      max-width: 130px;
+      margin-bottom: -90px;
+      z-index: 800;
     }
   }
 }
@@ -470,32 +509,32 @@ a {
 
 /******** PRICING ************/
 
-.top-pricing-circle {
-  left: -250px;
-  height: 900px;
-}
-.pricing-circle {
-  right: -30px;
-  margin-top: 280px;
-}
+// .top-pricing-circle {
+//   left: -250px;
+//   height: 900px;
+// }
+// .pricing-circle {
+//   right: -30px;
+//   margin-top: 280px;
+// }
 
 /******************** CONTACT ***********************/
 
 .contact-links {
   font-size: 1.3em;
 }
-.contact-top-circle {
-  left: -280px;
-  margin-top: -200px;
-  opacity: 5%;
-}
-.contact-bottom-circle {
-  width: 90vw;
-  height: 70px;
-  right: 10px;
-  background-color: rgba(210, 143, 241, 0.2);
-  overflow: hidden;
-}
+// .contact-top-circle {
+//   left: -280px;
+//   margin-top: -200px;
+//   opacity: 5%;
+// }
+// .contact-bottom-circle {
+//   width: 90vw;
+//   height: 70px;
+//   right: 10px;
+//   background-color: rgba(210, 143, 241, 0.2);
+//   overflow: hidden;
+// }
 
 .contact-link {
   &:hover {
@@ -637,16 +676,28 @@ a {
     margin-bottom: 10px;
   }
 }
+// @media (max-width: 1282px) {
+//   .services-wrapper {
+//     .service-wrapper {
+//       .service-container {
+//         max-height: 222px; // Ensure all boxes are equal height
+//       }
+//     }
+//   }
+// }
 
 @media (max-width: 1200px) {
-  .web-dev-container-1 {
-    max-width: 420px;
-  }
-  .portfolio-img {
-    max-width: 400px;
-  }
+  // .web-dev-container-1 {
+  //   max-width: 420px;
+  // }
+  // .portfolio-img {
+  //   max-width: 400px;
+  // }
   .flag {
     max-width: 40px;
+  }
+  .introtext-header {
+    font-size: 1.2em;
   }
 }
 
@@ -655,14 +706,33 @@ a {
     max-width: 480px;
     padding: 10px 10px 10px 15px;
   }
+  .logo {
+    max-width: 130px;
+  }
+  .navbar-expand-lg .navbar-nav .nav-link {
+    font-size: 1.4em;
+  }
+  .portfolio .portfolio-img {
+    max-width: 380px;
+  }
+  .left-container {
+    margin: 50px 0 0 0;
+  }
+  .right-container {
+    margin: 50px 0 0;
+  }
+  .portfolio-items {
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+  }
 }
 
-@media (min-width: 992px) {
+@media (max-width: 992px) {
   .navbar-expand-lg .navbar-collapse {
     justify-content: center;
   }
-}
-@media (max-width: 992px) {
   .navbar-scrolled {
     backdrop-filter: blur(3px);
   }
@@ -672,7 +742,9 @@ a {
 
   .navbar-expand-lg .navbar-nav .nav-link {
     font-size: 1.4em;
+    color: rgba(249, 249, 250, 0.76) !important;
   }
+
   .navbar > .container-fluid {
     justify-content: initial !important;
   }
@@ -682,8 +754,15 @@ a {
   .navbar-toggler {
     margin-right: 20px;
   }
+  .intro-link {
+    padding-top: 20px;
+  }
+  .language-wrapper {
+    margin-top: -50px;
+  }
   .niek-avatar {
     max-width: 200px;
+    margin-left: 150px;
   }
   .title {
     font-size: 2.5rem;
@@ -733,8 +812,20 @@ a {
     justify-content: center !important;
     align-items: center;
   }
-  .portfolio-img {
-    max-width: 320px;
+  .service-wrapper {
+    flex: 1 1 100%; // Take full width in the column layout
+  }
+  .portfolio .portfolio-img {
+    max-width: 300px;
+  }
+  .portfolio .left-container {
+    margin-left: 0;
+  }
+  .portfolio .right-container {
+    margin-right: 0;
+  }
+  .niek-avatar {
+    margin-left: 30px;
   }
 }
 
@@ -766,32 +857,7 @@ a {
     text-align: center;
   }
   .title {
-    font-size: 2.8rem;
-  }
-  .introtext-header {
-    font-size: 1.2em;
-  }
-
-  .left-container {
-    margin: 50px 0 0 0;
-  }
-  .right-container {
-    margin: 50px 0 0;
-  }
-  .portfolio-items {
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-  }
-  .pricing-container .price-check {
-    font-size: 0.85em;
-    margin-bottom: 10px;
-  }
-  .pricing-title {
-    font-size: 1.7rem !important;
-  }
-  .price {
-    font-size: 1.4rem !important;
+    font-size: 2.3rem;
   }
 }
 
@@ -804,7 +870,12 @@ a {
     display: flex;
     flex-direction: column-reverse;
   }
-
+  .portfolio .portfolio-img {
+    max-width: 370px;
+  }
+  .portfolio .portfolio-link {
+    font-size: 1.2em;
+  }
   .portfolio-text {
     text-align: center;
   }
@@ -821,6 +892,9 @@ a {
   h2 {
     font-size: 2.7rem;
   }
+  .service-container {
+    width: 100% !important;
+  }
 }
 
 @media only screen and (max-width: 500px) {
@@ -828,7 +902,7 @@ a {
     font-size: 20px;
   }
   .title {
-    font-size: 2rem;
+    font-size: 1.6rem;
   }
   .niek-avatar-2 {
     max-width: 150px;
@@ -844,17 +918,29 @@ a {
 
 @media (max-width: 460px) {
   .web-dev-container-1 {
-    margin: 0 10px;
+    margin: 0;
   }
 }
 @media (max-width: 412px) {
   .long-border {
     min-height: 170px;
   }
+  .service-subtitle {
+    font-size: 1.1em;
+  }
+  .services-wrapper .service-wrapper .service-container .service-text {
+    font-size: 0.9em;
+  }
+  .header {
+    padding: 150px 0 40px;
+  }
 }
 
 @media (max-width: 382px) {
   .long-border {
     min-height: 190px;
+  }
+  .tag {
+    font-size: 1.5rem;
   }
 }

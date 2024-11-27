@@ -128,4 +128,24 @@ document.addEventListener("DOMContentLoaded", () => {
     form.classList.remove("was-validated");
     isSubmitted = false;
   };
+
+  //NAVBAR
+  const dropdown = document.querySelector("#languageDropdown");
+  const toggleDropDirection = () => {
+    if (window.innerWidth <= 992) {
+      // For lg and smaller, make it a dropup
+      dropdown.classList.add("dropup");
+      dropdown.classList.remove("dropdown");
+    } else {
+      // For larger screens, make it a dropdown
+      dropdown.classList.add("dropdown");
+      dropdown.classList.remove("dropup");
+    }
+  };
+
+  // Run the function on page load
+  toggleDropDirection();
+
+  // Add event listener for window resize
+  window.addEventListener("resize", toggleDropDirection);
 });

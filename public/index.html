@@ -33,7 +33,7 @@
       <div class="blue-circle header-blue-circle"></div>
       <nav id="navbar"
         class="navbar navbar-expand-lg bg-body-tertiary d-flex justify-center outfit-regular bg-transparent pt-5 fixed-top nav-underline">
-        <div class="container-fluid">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
 
           <a class="navbar-brand" href="#">
             <img src="/images/logo.png" alt="logo" class="logo" />
@@ -45,57 +45,57 @@
               aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
-
-            <div class="collapse navbar-collapse justify-content-lg-center justify-content-end" id="navbarNav">
-              <ul class="navbar-nav">
-                <li class="nav-item px-xl-5 px-4">
-                  <a class="nav-link" href="#">Intro</a>
-                </li>
-                <li class="nav-item px-xl-5 px-4">
-                  <a class="nav-link" id="navItemNl" href="#services">Services</a>
-                </li>
-                <li class="nav-item px-xl-5 px-4">
-                  <a class="nav-link" href="#portfolio">Portfolio</a>
-                </li>
-                <li class="nav-item px-xl-5 px-4">
-                  <a class="nav-link" href="#contact">Contact</a>
-                </li>
-              </ul>
-              <!-- <div class="justify-end">
-                  <a><img class="flag" loading="lazy" alt="" src="/images/ENflag.svg"/></a> 
-                 <a title="switch to Dutch/Nederlands"> <img class="flag" loading="lazy" alt="dutch flag" src="/images/NLflag.svg"/></a>
-                </div> -->
-            </div>
           </div>
-          <div class="dropdown">
-            <a class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-globe"
-                viewBox="0 0 16 16">
-                <path
-                  d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m7.5-6.923c-.67.204-1.335.82-1.887 1.855A8 8 0 0 0 5.145 4H7.5zM4.09 4a9.3 9.3 0 0 1 .64-1.539 7 7 0 0 1 .597-.933A7.03 7.03 0 0 0 2.255 4zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a7 7 0 0 0-.656 2.5zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5zM8.5 5v2.5h2.99a12.5 12.5 0 0 0-.337-2.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5zM5.145 12q.208.58.468 1.068c.552 1.035 1.218 1.65 1.887 1.855V12zm.182 2.472a7 7 0 0 1-.597-.933A9.3 9.3 0 0 1 4.09 12H2.255a7 7 0 0 0 3.072 2.472M3.82 11a13.7 13.7 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5zm6.853 3.472A7 7 0 0 0 13.745 12H11.91a9.3 9.3 0 0 1-.64 1.539 7 7 0 0 1-.597.933M8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855q.26-.487.468-1.068zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.7 13.7 0 0 1-.312 2.5m2.802-3.5a7 7 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7 7 0 0 0-3.072-2.472c.218.284.418.598.597.933M10.855 4a8 8 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4z" />
-              </svg>
-            </a>
 
-            <ul class="dropdown-menu dropdown-menu-right">
-              <li class="item-dropdown">
-                <a href="/nl" title="Switch to Dutch/Nederlands" class="dropdown-item" id="language-nl">
-                  <img class="flag" loading="lazy" alt="Dutch flag" src="/images/NLflag.svg" /> Nederlands
-                </a>
+          <div class="collapse navbar-collapse justify-content-lg-center" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+              <li class="nav-item px-xl-5 px-4">
+                <a class="nav-link intro-link" href="#intro">Intro</a>
               </li>
-              <li class="item-dropdown">
-                <a href="/" title="Switch to English/Engels" class="dropdown-item" id="language-en">
-                  <img class="flag" loading="lazy" alt="English flag" src="/images/ENflag.svg" /> English
-                </a>
+              <li class="nav-item px-xl-5 px-4">
+                <a class="nav-link" id="navItemNl" href="#services">Services</a>
+              </li>
+              <li class="nav-item px-xl-5 px-4">
+                <a class="nav-link" href="#portfolio">Portfolio</a>
+              </li>
+              <li class="nav-item px-xl-5 px-4">
+                <a class="nav-link" href="#contact">Contact</a>
               </li>
             </ul>
+            <div class="language-wrapper">
+              <div class="dropdown" id="languageDropdown">
+                <a class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-globe"
+                    viewBox="0 0 16 16">
+                    <path
+                      d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m7.5-6.923c-.67.204-1.335.82-1.887 1.855A8 8 0 0 0 5.145 4H7.5zM4.09 4a9.3 9.3 0 0 1 .64-1.539 7 7 0 0 1 .597-.933A7.03 7.03 0 0 0 2.255 4zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a7 7 0 0 0-.656 2.5zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5zM8.5 5v2.5h2.99a12.5 12.5 0 0 0-.337-2.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5zM5.145 12q.208.58.468 1.068c.552 1.035 1.218 1.65 1.887 1.855V12zm.182 2.472a7 7 0 0 1-.597-.933A9.3 9.3 0 0 1 4.09 12H2.255a7 7 0 0 0 3.072 2.472M3.82 11a13.7 13.7 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5zm6.853 3.472A7 7 0 0 0 13.745 12H11.91a9.3 9.3 0 0 1-.64 1.539 7 7 0 0 1-.597.933M8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855q.26-.487.468-1.068zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.7 13.7 0 0 1-.312 2.5m2.802-3.5a7 7 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7 7 0 0 0-3.072-2.472c.218.284.418.598.597.933M10.855 4a8 8 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4z" />
+                  </svg>
+                </a>
 
+                <ul class="dropdown-menu dropdown-menu-right">
+                  <li class="item-dropdown">
+                    <a href="/nl" title="Switch to Dutch/Nederlands" class="dropdown-item" id="language-nl">
+                      <img class="flag" loading="lazy" alt="Dutch flag" src="/images/NLflag.svg" /> Nederlands
+                    </a>
+                  </li>
+                  <li class="item-dropdown">
+                    <a href="/" title="Switch to English/Engels" class="dropdown-item" id="language-en">
+                      <img class="flag" loading="lazy" alt="English flag" src="/images/ENflag.svg" /> English
+                    </a>
+                  </li>
+                </ul>
+
+
+              </div>
+            </div>
           </div>
         </div>
       </nav>
       <div
-        class="header d-flex align-center justify-content-md-around justify-content-center flex-md-row flex-column-reverse container">
+        class="header d-flex align-center justify-content-lg-around justify-content-center flex-md-row flex-column-reverse container"
+        id="intro">
         <div class="my-md-4 pt-md-5">
-          <h1 class="outfit-bold title hi-title">Hi!</h1>
+          <h1 class="outfit-bold title hi-title" id="title">Hi!</h1>
           <h1 class="outfit-bold title tag" id="title2">My name is Dannique. </h1>
           <h1 class="outfit-bold title tag mb-4" id="title3"> I am a web developer.</h1>
           <div class="niek-avatar-2-wrapper"><img class="niek-avatar-2 d-none" loading="lazy" alt=""
@@ -109,7 +109,7 @@
       <div class="pink-circle header-pink-circle"></div>
     </div>
 
-    <div class="intro py-5 mt-lg-3 mb-5">
+    <div class="intro py-5 mt-lg-3 mb-md-5">
       <div class="text-center">
         <h2 class="pb-4">Intro</h2>
         <p class="text m-auto pb-1 introtext-header" id="introText"> I love designing and building websites that can
@@ -123,15 +123,16 @@
 
     <span class="id-anchor" id="services"></span>
     <div class="pt-5 mt-5 container">
-      <h2 class="py-5 text-center">Services</h2>
+      <h2 class="py-sm-5 py-3 text-center">Services</h2>
       <div class="services-wrapper d-flex mx-auto">
         <div class="service-wrapper mx-2">
-          <img class="service-icon" loading="lazy" alt="" src="/images/icon-development.png" />
-          <div class="web-dev-container-1 service-container text-center overflow-hidden py-1 mt-5">
+          <img class="service-icon mx-auto" loading="lazy" alt="" src="/images/icon-development.png" />
+          <div class="web-dev-container-1 service-container text-center py-1 mt-5">
             <div class="d-flex flex-column pt-5 align-items-center">
-              <h5 class="white-background-text outfit-medium mb-3" id="websiteDesignTitle">Custom Website Design &
+              <h5 class="white-background-text outfit-medium mb-3 service-subtitle" id="websiteDesignTitle">Website
+                Design &
                 Development</h5>
-              <p class="px-xl-4 px-1 service-text" id="websiteDesign">Designing and building responsive, brand-focused
+              <p class="px-xl-4 px-2 service-text" id="websiteDesign">Designing and building responsive, brand-focused
                 websites with or without WordPress, using custom code like HTML, CSS, JavaScript, React, or PHP tailored
                 to your needs.</p>
             </div>
@@ -139,11 +140,12 @@
         </div>
 
         <div class="service-wrapper mx-1">
-          <img class="service-icon commerce-icon" loading="lazy" alt="" src="/images/icon-ecommerce1.png" />
-          <div class="web-dev-container-1 service-container text-center overflow-hidden py-1 mt-5">
+          <img class="service-icon mx-auto commerce-icon" loading="lazy" alt="" src="/images/icon-ecommerce1.png" />
+          <div class="web-dev-container-1 service-container text-center py-1 mt-5">
             <div class="d-flex flex-column pt-5 align-items-center">
-              <h5 class="white-background-text outfit-medium mb-3" id="EcommerceTitle">E-commerce Solutions</h5>
-              <p class="px-xl-4 px-1 service-text" id="Ecommerce">Creating user-friendly, secure online stores with
+              <h5 class="white-background-text outfit-medium mb-3 service-subtitle" id="EcommerceTitle">E-commerce
+                Solutions</h5>
+              <p class="px-xl-4 px-2 service-text" id="Ecommerce">Creating user-friendly, secure online stores with
                 WooCommerce or Shopify, designed to boost your sales through a visually appealing and effective
                 e-commerce site.</p>
             </div>
@@ -151,11 +153,11 @@
         </div>
 
         <div class="service-wrapper mx-2">
-          <img class="service-icon" loading="lazy" alt="" src="/images/icon-SEO.png" />
-          <div class="web-dev-container-1 service-container text-center overflow-hidden py-1 mt-5">
+          <img class="service-icon mx-auto" loading="lazy" alt="" src="/images/icon-SEO.png" />
+          <div class="web-dev-container-1 service-container text-center py-1 mt-5">
             <div class="d-flex flex-column pt-5 align-items-center">
-              <h5 class="white-background-text outfit-medium mb-3" id="SEOTitle">SEO Optimization</h5>
-              <p class="px-xl-4 px-1 service-text" id="SEO">Optimize website performance for better search
+              <h5 class="white-background-text outfit-medium mb-3 service-subtitle" id="SEOTitle">SEO Optimization</h5>
+              <p class="px-xl-5 px-2 service-text" id="SEO">Optimize website performance for better search
                 engine visibility and provide content writing services to ensure your website has engaging, SEO-friendly
                 copy.</p>
             </div>
@@ -167,22 +169,24 @@
 
       <div class="services-wrapper d-flex mx-auto pt-md-5">
         <div class="service-wrapper mx-2">
-          <img class="service-icon" loading="lazy" alt="" src="/images/icon-maintenance.png" />
-          <div class="web-dev-container-1 service-container text-center overflow-hidden py-1 mt-5">
+          <img class="service-icon mx-auto" loading="lazy" alt="" src="/images/icon-maintenance.png" />
+          <div class="web-dev-container-1 service-container text-center py-1 mt-5">
             <div class="d-flex flex-column pt-5 align-items-center">
-              <h5 class="white-background-text outfit-medium mb-3" id="maintenanceTitle">Website Maintenance</h5>
-              <p class="px-xl-5 px-1 service-text" id="maintenance">Provide continuous updates, improve website
+              <h5 class="white-background-text outfit-medium mb-3 service-subtitle" id="maintenanceTitle">Website
+                Maintenance</h5>
+              <p class="px-xl-4 px-2 service-text" id="maintenance">Provide continuous updates, improve website
                 performance, and implement SEO best practices to keep the website optimized and secure.</p>
             </div>
           </div>
         </div>
 
         <div class="service-wrapper mx-1">
-          <img class="service-icon" loading="lazy" alt="" src="/images/icon-content2.png" />
-          <div class="web-dev-container-1 service-container text-center overflow-hidden py-1 mt-5">
+          <img class="service-icon mx-auto" loading="lazy" alt="" src="/images/icon-content2.png" />
+          <div class="web-dev-container-1 service-container text-center py-1 mt-5">
             <div class="d-flex flex-column pt-5 align-items-center">
-              <h5 class="white-background-text outfit-medium mb-3" id="contentTitle">Content Writing for Websites</h5>
-              <p class="px-xl-5 px-1 service-text" id="contentwr">Creating clear, engaging content that connects
+              <h5 class="white-background-text outfit-medium mb-3 service-subtitle" id="contentTitle">Content Writing
+                for Websites</h5>
+              <p class="px-xl-4 px-2 service-text" id="contentwr">Creating clear, engaging content that connects
                 with your audience and improves your site's SEO, helping your message stand out and reach more people.
               </p>
             </div>
@@ -190,11 +194,12 @@
         </div>
 
         <div class="service-wrapper mx-2">
-          <img class="service-icon" loading="lazy" alt="" src="/images/icon-redesign.png" />
-          <div class="web-dev-container-1 service-container text-center overflow-hidden py-1 mt-5">
+          <img class="service-icon mx-auto" loading="lazy" alt="" src="/images/icon-redesign.png" />
+          <div class="web-dev-container-1 service-container text-center py-1 mt-5">
             <div class="d-flex flex-column pt-5 align-items-center">
-              <h5 class="white-background-text outfit-medium mb-3" id="redesignTitle">Website Redesign & Revamp</h5>
-              <p class="px-xl-4 px-1 service-text" id="redesign">Refresh outdated websites with a fresh, polished
+              <h5 class="white-background-text outfit-medium mb-3 service-subtitle" id="redesignTitle">Website Redesign
+                & Revamp</h5>
+              <p class="px-xl-4 px-2 service-text" id="redesign">Refresh outdated websites with a fresh, polished
                 design and improved functionality, delivering a better user experience and a more professional online
                 image.</p>
             </div>
@@ -203,10 +208,12 @@
       </div>
 
     </div>
-    <div class="cta mx-auto text-center py-5 mt-3">
-      <p class="pb-4" id="ctaServices"><span class="lh-lg">Interested in any of these services?</span> <br />
+    <div class="cta mx-auto text-center py-5 px-2 mt-3">
+      <p class="pb-4" id="ctaServices"><span class="lh-lg">Interested in any of these services?</span>
+        <br />
         I’d love to help bring your website vision to life.
-        Feel free to reach out anytime!</p>
+        Feel free to reach out anytime!
+      </p>
       <a href="#contact"><button type="submit" class="btn btn-large outfit-regular cta-btn" id="quoteButton">Request a
           Quote</button></a>
 
@@ -215,8 +222,8 @@
     <span class="id-anchor" id="portfolio"></span>
     <div class="portfolio pt-5 mt-lg-5">
       <div class="portfolio-intro text-center m-auto">
-        <h2 class="py-5">Portfolio</h2>
-        <p class="text m-auto pb-5" id="portfolioSubtext">Here are some of my latest projects:</p>
+        <h2 class="py-sm-5 py-4">Portfolio</h2>
+        <p class="text m-auto pb-sm-5 pb-3 px-2" id="portfolioSubtext">Here are some of my latest projects:</p>
       </div>
       <div class="top-div">
         <div class="d-flex flex-column p-lg-5 portfolio-items">
@@ -262,26 +269,27 @@
             </div>
           </div>
 
-          <div class="pink-circle portfolio-circle"></div>
+          <!-- <div class="pink-circle portfolio-circle"></div> -->
 
         </div>
       </div>
 
     </div>
 
-    <div class="blue-circle top-pricing-circle"></div>
+    <!-- <div class="blue-circle top-pricing-circle"></div>
 
-    <div class="pink-circle pricing-circle"></div>
+    <div class="pink-circle pricing-circle"></div> -->
 
     <span class="id-anchor" id="contact"></span>
     <div class="contact pt-5 mt-lg-5">
-      <div class="pink-circle contact-top-circle"></div>
+      <!-- <div class="pink-circle contact-top-circle"></div> -->
 
       <h2 class="py-5">Contact</h2>
 
 
       <div class="contact-text-container">
-        <p class="text m-auto pb-3 text-center text introtext-header" id="contactText">Interested, have any questions or
+        <p class="text m-auto pb-3 text-center text introtext-header" id="contactText">Interested, have any
+          questions or
           want a quote? Feel free to reach out. I look forward to hearing from you and creating something great
           together!</p>
 
@@ -387,11 +395,7 @@
       </div>
       <div class="blue-circle contact-bottom-circle"></div>
 
-
     </div>
-
-
-
 
   </article>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"

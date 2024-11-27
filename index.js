@@ -82,6 +82,14 @@ app.post("/", async (req, res) => {
   }
 });
 
+app.get("/cv", (req, res) => {
+  res.sendFile(__dirname + "/public/CV/Dannique_de_Klerk_CV.pdf");
+});
+
+app.get("/cv-nl", (req, res) => {
+  res.sendFile(__dirname + "/public/CV/Dannique_de_Klerk_CV_NL.pdf");
+});
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
