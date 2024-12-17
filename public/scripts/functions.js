@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Generate reCAPTCHA token
     grecaptcha.ready(() => {
       grecaptcha
-        .execute("6LcbgoUqAAAAANKiVoOO6ruvB3Db9xrLXDHZIwCP", {
+        .execute("6Lc4rYUqAAAAAO5TZb2dQXvh7eaYePdMTd50lSPb", {
           action: "submit",
         })
         .then(async (token) => {
