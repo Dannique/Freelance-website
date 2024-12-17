@@ -4,7 +4,6 @@ import nodemailer from "nodemailer";
 import fetch from "node-fetch";
 import { fileURLToPath } from "url";
 import path from "path";
-import bodyParser from "body-parser";
 
 dotenv.config();
 
@@ -13,16 +12,16 @@ const app = express();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "../client/public")));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "index.html"));
+  res.sendFile(path.join(__dirname, "../client/public", "index.html"));
 });
 
 app.get(["/", "/nl"], (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "index.html"));
+  res.sendFile(path.join(__dirname, "../client/public", "index.html"));
 });
 
 app.post("/", async (req, res) => {
@@ -83,14 +82,18 @@ app.post("/", async (req, res) => {
 });
 
 app.get("/cv", (req, res) => {
-  res.sendFile(__dirname + "/public/CV/Dannique_de_Klerk_CV.pdf");
+  res.sendFile(
+    path.resolve(__dirname, "../client/public/CV/Dannique_de_Klerk_CV.pdf")
+  );
 });
 
 app.get("/cv-nl", (req, res) => {
-  res.sendFile(__dirname + "/public/CV/Dannique_de_Klerk_CV_NL.pdf");
+  res.sendFile(
+    path.resolve(__dirname, "../client/public/CV/Dannique_de_Klerk_CV_NL.pdf")
+  );
 });
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
