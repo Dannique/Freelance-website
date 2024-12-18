@@ -67,10 +67,13 @@ app.post("/", async (req, res) => {
       }).then((res) => res.json()),
       transporter.verify(), // Ensure transporter is ready
     ]);
-
+    console.log("reCAPTCHA Verification Response1:", recaptchaResult);
+    console.log("Received reCAPTCHA Token2:", recaptchaToken);
     if (!recaptchaResult.success || recaptchaResult.score < 0.5) {
       return res.status(400).json({ error: "reCAPTCHA validation failed." });
     }
+    console.log("reCAPTCHA Verification Response2:", recaptchaResult);
+    console.log("Received reCAPTCHA Token2:", recaptchaToken);
 
     // Send email
     await transporter.sendMail(mailOptions);

@@ -71,6 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
           action: "submit",
         })
         .then(async (token) => {
+          console.log("Generated reCAPTCHA Token:", token);
           document.getElementById("g-recaptcha-response").value = token;
 
           // Gather form data
