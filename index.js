@@ -67,20 +67,29 @@ app.post("/", async (req, res) => {
       }).then((res) => res.json()),
       transporter.verify(), // Ensure transporter is ready
     ]);
-    console.log("reCAPTCHA Verification Response1:", recaptchaResult);
-    console.log("Received reCAPTCHA Token2:", recaptchaToken);
-    if (!recaptchaResult.success || recaptchaResult.score < 0.5) {
-      return res.status(400).json({ error: "reCAPTCHA validation failed." });
+    console.log("Full reCAPTCHA Response:", recaptchaResult);
+    console.log("Received reCAPTCHA Token:", recaptchaToken);
+    if (
+      !recaptchaResult.success ||
+      recaptchaResult.action !== "submit_form" ||
+      recaptchaResult.score < 0.5
+    ) {
+      console.error("reCAPTCHA validation failed:", recaptchaResult);
+      return res
+        .status(400)
+        .json({
+          error: "reCAPTCHA validation failed.",
+          details: recaptchaResult,
+        });
     }
-    console.log("reCAPTCHA Verification Response2:", recaptchaResult);
-    console.log("Received reCAPTCHA Token2:", recaptchaToken);
+    console.log("reCAPTCHA Verified Successfully:", recaptchaResult);
 
     // Send email
     await transporter.sendMail(mailOptions);
 
     res.status(200).json({ message: "Email sent successfully!" });
   } catch (error) {
-    console.error("Error:", error);
+    console.error("Error during form submission:", error);
     res.status(500).json({ error: "Internal server error." });
   }
 });
