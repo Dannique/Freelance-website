@@ -77,7 +77,6 @@ document.addEventListener("DOMContentLoaded", () => {
           // Gather form data
           const formData = new FormData(form);
           const formObject = Object.fromEntries(formData.entries());
-          console.log("Form Data Sent to Backend:", formObject);
           console.log(
             "g-recaptcha-response Value:",
             document.getElementById("g-recaptcha-response").value
