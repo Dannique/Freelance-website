@@ -77,6 +77,11 @@ document.addEventListener("DOMContentLoaded", () => {
           // Gather form data
           const formData = new FormData(form);
           const formObject = Object.fromEntries(formData.entries());
+          console.log("Form Data Sent to Backend:", formObject);
+          console.log(
+            "g-recaptcha-response Value:",
+            document.getElementById("g-recaptcha-response").value
+          );
 
           try {
             const response = await fetch("/", {
@@ -84,6 +89,11 @@ document.addEventListener("DOMContentLoaded", () => {
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify(formObject),
             });
+            console.log("Form Data Sent to Backend2:", formObject);
+            console.log(
+              "g-recaptcha-response Value2:",
+              document.getElementById("g-recaptcha-response").value
+            );
 
             if (response.ok) {
               successMessage.classList.remove("d-none");
