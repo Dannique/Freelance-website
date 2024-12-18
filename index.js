@@ -75,12 +75,10 @@ app.post("/", async (req, res) => {
       recaptchaResult.score < 0.5
     ) {
       console.error("reCAPTCHA validation failed:", recaptchaResult);
-      return res
-        .status(400)
-        .json({
-          error: "reCAPTCHA validation failed.",
-          details: recaptchaResult,
-        });
+      return res.status(400).json({
+        error: "reCAPTCHA validation failed.",
+        details: recaptchaResult,
+      });
     }
     console.log("reCAPTCHA Verified Successfully:", recaptchaResult);
 
