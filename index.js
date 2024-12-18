@@ -114,7 +114,7 @@ app.post("/", async (req, res) => {
 
     if (
       !recaptchaResult.success ||
-      recaptchaResult.action !== "submit_form" ||
+      recaptchaResult.action !== "submit" ||
       recaptchaResult.score < 0.5 ||
       recaptchaResult.hostname !== "dannique.me"
     ) {
