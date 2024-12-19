@@ -64,46 +64,35 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    // Generate reCAPTCHA token
-    grecaptcha.ready(() => {
-      grecaptcha
-        .execute("6Lc4rYUqAAAAAO5TZb2dQXvh7eaYePdMTd50lSPb", {
-          action: "submit",
-        })
-        .then(async (token) => {
-          document.getElementById("g-recaptcha-response").value = token;
+    // Gather form data
+    const formData = new FormData(form);
+    const formObject = Object.fromEntries(formData.entries());
 
-          // Gather form data
-          const formData = new FormData(form);
-          const formObject = Object.fromEntries(formData.entries());
+    try {
+      const response = await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formObject),
+      });
 
-          try {
-            const response = await fetch("/", {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify(formObject),
-            });
-
-            if (response.ok) {
-              successMessage.classList.remove("d-none");
-              successMessage.classList.add("d-block");
-              form.reset();
-              resetValidation(form); // Reset validation state
-            } else {
-              failedMessage.classList.remove("d-none");
-              failedMessage.classList.add("d-block");
-            }
-          } catch (error) {
-            failedMessage.classList.remove("d-none");
-            failedMessage.classList.add("d-block");
-            console.error("Error:", error);
-          } finally {
-            // Hide spinner and re-enable button
-            loadingSpinner.classList.add("d-none");
-            submitButton.disabled = false;
-          }
-        });
-    });
+      if (response.ok) {
+        successMessage.classList.remove("d-none");
+        successMessage.classList.add("d-block");
+        form.reset();
+        resetValidation(form); // Reset validation state
+      } else {
+        failedMessage.classList.remove("d-none");
+        failedMessage.classList.add("d-block");
+      }
+    } catch (error) {
+      failedMessage.classList.remove("d-none");
+      failedMessage.classList.add("d-block");
+      console.error("Error:", error);
+    } finally {
+      // Hide spinner and re-enable button
+      loadingSpinner.classList.add("d-none");
+      submitButton.disabled = false;
+    }
   });
 
   // Real-time validation

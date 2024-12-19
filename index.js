@@ -26,15 +26,7 @@ app.get(["/", "/nl"], (req, res) => {
 });
 
 app.post("/", async (req, res) => {
-  const {
-    name,
-    email,
-    message,
-    "g-recaptcha-response": recaptchaToken,
-  } = req.body;
-
-  const secretKey = process.env.RECAPTCHA_SECRET_KEY; // Your reCAPTCHA secret key
-  const verificationUrl = "https://www.google.com/recaptcha/api/siteverify";
+  const { name, email, message } = req.body;
 
   const transporter = nodemailer.createTransport({
     service: "gmail",
@@ -58,19 +50,8 @@ app.post("/", async (req, res) => {
   };
 
   try {
-    // Parallelize reCAPTCHA validation and email sending
-    const [recaptchaResult] = await Promise.all([
-      fetch(verificationUrl, {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: `secret=${secretKey}&response=${recaptchaToken}`,
-      }).then((res) => res.json()),
-      transporter.verify(), // Ensure transporter is ready
-    ]);
-
-    if (!recaptchaResult.success || recaptchaResult.score < 0.5) {
-      return res.status(400).json({ error: "reCAPTCHA validation failed." });
-    }
+    // Ensure transporter is ready
+    await transporter.verify();
 
     // Send email
     await transporter.sendMail(mailOptions);
