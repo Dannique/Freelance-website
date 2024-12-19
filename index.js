@@ -33,19 +33,19 @@ app.post("/", async (req, res) => {
     "g-recaptcha-response": recaptchaToken,
   } = req.body;
 
-  const secretKey = process.env.RECAPTCHA_SECRET_KEY;
-  const verificationUrl = "https://www.google.com/recaptcha/api/siteverify";
+  // const secretKey = process.env.RECAPTCHA_SECRET_KEY;
+  // const verificationUrl = "https://www.google.com/recaptcha/api/siteverify";
 
   // Validate environment variable
-  if (!secretKey) {
-    console.error("reCAPTCHA Secret Key is missing. Check your .env file.");
-    return res
-      .status(500)
-      .json({ error: "Server configuration error. Missing secret key." });
-  }
+  // if (!secretKey) {
+  //   console.error("reCAPTCHA Secret Key is missing. Check your .env file.");
+  //   return res
+  //     .status(500)
+  //     .json({ error: "Server configuration error. Missing secret key." });
+  // }
 
-  console.log("reCAPTCHA Secret Key:", secretKey);
-  console.log("Received reCAPTCHA Token from Client:", recaptchaToken);
+  // console.log("reCAPTCHA Secret Key:", secretKey);
+  // console.log("Received reCAPTCHA Token from Client:", recaptchaToken);
 
   const transporter = nodemailer.createTransport({
     service: "gmail",
@@ -92,40 +92,58 @@ app.post("/", async (req, res) => {
     //   });
     // }
     // console.log("reCAPTCHA Verified Successfully:", recaptchaResult);
-    let recaptchaResult;
-    try {
-      const response = await fetch(verificationUrl, {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: `secret=${secretKey}&response=${recaptchaToken}`,
-      });
-      recaptchaResult = await response.json();
-    } catch (err) {
-      console.error("Error contacting Google reCAPTCHA API:", err);
-      return res.status(500).json({
-        error: "Failed to validate reCAPTCHA. Please try again later.",
-      });
-    }
 
-    console.log(
-      "Full reCAPTCHA Response:",
-      JSON.stringify(recaptchaResult, null, 2)
-    );
+    // let recaptchaResult;
+    // try {
+    //   const response = await fetch(verificationUrl, {
+    //     method: "POST",
+    //     headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    //     body: `secret=${secretKey}&response=${recaptchaToken}`,
+    //   });
+    //   recaptchaResult = await response.json();
+    // } catch (err) {
+    //   console.error("Error contacting Google reCAPTCHA API:", err);
+    //   return res.status(500).json({
+    //     error: "Failed to validate reCAPTCHA. Please try again later.",
+    //   });
+    // }
 
-    if (
-      !recaptchaResult.success ||
-      recaptchaResult.action !== "submit" ||
-      recaptchaResult.score < 0.5 ||
-      recaptchaResult.hostname !== "dannique.me"
-    ) {
-      console.error("reCAPTCHA validation failed:", recaptchaResult);
+    // console.log(
+    //   "Full reCAPTCHA Response:",
+    //   JSON.stringify(recaptchaResult, null, 2)
+    // );
+
+    // if (
+    //   !recaptchaResult.success ||
+    //   recaptchaResult.action !== "submit" ||
+    //   recaptchaResult.score < 0.5 ||
+    //   recaptchaResult.hostname !== "dannique.me"
+    // ) {
+    //   console.error("reCAPTCHA validation failed:", recaptchaResult);
+    //   return res.status(400).json({
+    //     error: "reCAPTCHA validation failed.",
+    //     details: recaptchaResult,
+    //   });
+    // }
+
+    // console.log("reCAPTCHA Verified Successfully:", recaptchaResult);
+
+    const recaptchaResponse = await fetch(
+      `${verificationUrl}?secret=${secretKey}&response=${recaptchaToken}`,
+      { method: "POST" }
+    ).then((res) => res.json());
+
+    console.log("reCAPTCHA Response:", recaptchaResponse);
+
+    if (!recaptchaResponse.success || recaptchaResponse.score < 0.5) {
+      console.error("reCAPTCHA validation failed:", recaptchaResponse);
       return res.status(400).json({
         error: "reCAPTCHA validation failed.",
-        details: recaptchaResult,
+        details: recaptchaResponse,
       });
     }
 
-    console.log("reCAPTCHA Verified Successfully:", recaptchaResult);
+    console.log("reCAPTCHA Verified Successfully");
 
     // Send email
     await transporter.sendMail(mailOptions);

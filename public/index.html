@@ -25,6 +25,7 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"
     integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="https://www.google.com/recaptcha/api.js"></script>
 </head>
 
 <body>
@@ -327,10 +328,12 @@
                   </div>
                 </div>
 
-                <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response" />
+                <!-- <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response" /> -->
 
                 <div class="text-center mt-3">
-                  <button type="submit" class="btn btn-large outfit-regular" id="formBtn">Send Message
+                  <button type="submit" class="btn btn-large outfit-regular g-recaptcha" id="formBtn"
+                    data-sitekey="6LenUZ8qAAAAAChL_HBbBIfM1D86G_3BKZEBnDxE" data-callback="onSubmit"
+                    data-action="submit">Send Message
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
                       class="bi bi-arrow-right arrow-icon" viewBox="0 0 16 16">
                       <path fill-rule="evenodd"
@@ -411,7 +414,13 @@
   <script src="scripts/functions.js" defer type="text/javascript"></script>
   <script src="scripts/translations.js" defer type="text/javascript"></script>
   <!-- <script src="https://www.google.com/recaptcha/api.js?render=6LcbgoUqAAAAANKiVoOO6ruvB3Db9xrLXDHZIwCP"></script> -->
-  <script src="https://www.google.com/recaptcha/api.js?render=6LenUZ8qAAAAAChL_HBbBIfM1D86G_3BKZEBnDxE"></script>
+
+  <!-- <script src="https://www.google.com/recaptcha/api.js?render=6LenUZ8qAAAAAChL_HBbBIfM1D86G_3BKZEBnDxE"></script> -->
+  <script>
+    function onSubmit(token) {
+      document.getElementById("conyeform").submit();
+    }
+  </script>
 </body>
 
 </html>
