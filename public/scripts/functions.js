@@ -47,6 +47,75 @@ document.addEventListener("DOMContentLoaded", () => {
   const loadingSpinner = document.getElementById("loadingSpinner");
   let isSubmitted = false; // Track form submission state
 
+  // form.addEventListener("submit", async (event) => {
+  //   event.preventDefault();
+
+  //   // Reset messages and show spinner
+  //   successMessage.classList.add("d-none");
+  //   failedMessage.classList.add("d-none");
+  //   loadingSpinner.classList.remove("d-none");
+  //   submitButton.disabled = true;
+
+  //   // validation
+  //   if (!form.checkValidity()) {
+  //     form.classList.add("was-validated");
+  //     loadingSpinner.classList.add("d-none");
+  //     submitButton.disabled = false;
+  //     return;
+  //   }
+
+  //   // Generate reCAPTCHA token
+  //   grecaptcha.ready(() => {
+  //     grecaptcha
+  //       .execute("6LenUZ8qAAAAAChL_HBbBIfM1D86G_3BKZEBnDxE", {
+  //         action: "submit",
+  //       })
+  //       .then(async (token) => {
+  //         console.log("Generated reCAPTCHA Token:", token);
+  //         document.getElementById("g-recaptcha-response").value = token;
+
+  //         // Gather form data
+  //         const formData = new FormData(form);
+  //         const formObject = Object.fromEntries(formData.entries());
+  //         console.log(
+  //           "g-recaptcha-response Value:",
+  //           document.getElementById("g-recaptcha-response").value
+  //         );
+
+  //         try {
+  //           const response = await fetch("/", {
+  //             method: "POST",
+  //             headers: { "Content-Type": "application/json" },
+  //             body: JSON.stringify(formObject),
+  //           });
+  //           console.log("Form Data Sent to Backend2:", formObject);
+  //           console.log(
+  //             "g-recaptcha-response Value2:",
+  //             document.getElementById("g-recaptcha-response").value
+  //           );
+
+  //           if (response.ok) {
+  //             successMessage.classList.remove("d-none");
+  //             successMessage.classList.add("d-block");
+  //             form.reset();
+  //             resetValidation(form); // Reset validation state
+  //           } else {
+  //             failedMessage.classList.remove("d-none");
+  //             failedMessage.classList.add("d-block");
+  //           }
+  //         } catch (error) {
+  //           failedMessage.classList.remove("d-none");
+  //           failedMessage.classList.add("d-block");
+  //           console.error("Error:", error);
+  //         } finally {
+  //           // Hide spinner and re-enable button
+  //           loadingSpinner.classList.add("d-none");
+  //           submitButton.disabled = false;
+  //         }
+  //       });
+  //   });
+  // });
+
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
 
@@ -56,7 +125,7 @@ document.addEventListener("DOMContentLoaded", () => {
     loadingSpinner.classList.remove("d-none");
     submitButton.disabled = true;
 
-    // validation
+    // Form validation
     if (!form.checkValidity()) {
       form.classList.add("was-validated");
       loadingSpinner.classList.add("d-none");
@@ -64,56 +133,34 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    // // Generate reCAPTCHA token
-    // grecaptcha.ready(() => {
-    //   grecaptcha
-    //     .execute("6LenUZ8qAAAAAChL_HBbBIfM1D86G_3BKZEBnDxE", {
-    //       action: "submit",
-    //     })
-    //     .then(async (token) => {
-    //       console.log("Generated reCAPTCHA Token:", token);
-    //       document.getElementById("g-recaptcha-response").value = token;
+    // Gather form data
+    const formData = new FormData(form);
+    const formObject = Object.fromEntries(formData.entries());
 
-    //       // Gather form data
-    //       const formData = new FormData(form);
-    //       const formObject = Object.fromEntries(formData.entries());
-    //       console.log(
-    //         "g-recaptcha-response Value:",
-    //         document.getElementById("g-recaptcha-response").value
-    //       );
+    try {
+      const response = await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formObject),
+      });
 
-    //       try {
-    //         const response = await fetch("/", {
-    //           method: "POST",
-    //           headers: { "Content-Type": "application/json" },
-    //           body: JSON.stringify(formObject),
-    //         });
-    //         console.log("Form Data Sent to Backend2:", formObject);
-    //         console.log(
-    //           "g-recaptcha-response Value2:",
-    //           document.getElementById("g-recaptcha-response").value
-    //         );
-
-    //         if (response.ok) {
-    //           successMessage.classList.remove("d-none");
-    //           successMessage.classList.add("d-block");
-    //           form.reset();
-    //           resetValidation(form); // Reset validation state
-    //         } else {
-    //           failedMessage.classList.remove("d-none");
-    //           failedMessage.classList.add("d-block");
-    //         }
-    //       } catch (error) {
-    //         failedMessage.classList.remove("d-none");
-    //         failedMessage.classList.add("d-block");
-    //         console.error("Error:", error);
-    //       } finally {
-    //         // Hide spinner and re-enable button
-    //         loadingSpinner.classList.add("d-none");
-    //         submitButton.disabled = false;
-    //       }
-    //     });
-    // });
+      if (response.ok) {
+        successMessage.classList.remove("d-none");
+        successMessage.classList.add("d-block");
+        form.reset();
+        resetValidation(form); // Reset validation state
+      } else {
+        failedMessage.classList.remove("d-none");
+        failedMessage.classList.add("d-block");
+      }
+    } catch (error) {
+      failedMessage.classList.remove("d-none");
+      failedMessage.classList.add("d-block");
+      console.error("Error:", error);
+    } finally {
+      loadingSpinner.classList.add("d-none");
+      submitButton.disabled = false;
+    }
   });
 
   // Real-time validation
