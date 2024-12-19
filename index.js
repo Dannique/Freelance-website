@@ -138,16 +138,6 @@ app.get(["/", "/nl"], (req, res) => {
 //   }
 // });
 
-// Email Config
-const transporter = nodemailer.createTransport({
-  service: "gmail",
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS,
-  },
-});
-
-// Contact Form Endpoint
 app.post("/", async (req, res) => {
   const {
     name,
@@ -158,36 +148,41 @@ app.post("/", async (req, res) => {
 
   // Verify reCAPTCHA Token
   const recaptchaUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${recaptchaToken}`;
-  const recaptchaResponse = await fetch(recaptchaUrl, { method: "POST" }).then(
-    (res) => res.json()
-  );
-
-  console.log("reCAPTCHA Response:", recaptchaResponse);
-
-  if (!recaptchaResponse.success || recaptchaResponse.score < 0.5) {
-    return res.status(400).json({
-      error: "reCAPTCHA validation failed.",
-      details: recaptchaResponse,
-    });
-  }
-
-  // Send Email
-  const mailOptions = {
-    from: email,
-    to: process.env.EMAIL_USER,
-    subject: "New Contact Form Submission",
-    html: `
-      <h4>Name: ${name}</h4>
-      <h4>Email: ${email}</h4>
-      <p>Message: ${message}</p>
-    `,
-  };
 
   try {
+    const recaptchaResponse = await fetch(recaptchaUrl, {
+      method: "POST",
+    }).then((res) => res.json());
+
+    console.log("reCAPTCHA Response:", recaptchaResponse);
+
+    if (!recaptchaResponse.success || recaptchaResponse.score < 0.5) {
+      return res.status(400).json({
+        error: "reCAPTCHA validation failed.",
+        details: recaptchaResponse,
+      });
+    }
+
+    // Email Sending Logic
+    const transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
+      },
+    });
+
+    const mailOptions = {
+      from: email,
+      to: process.env.EMAIL_USER,
+      subject: "New Contact Form Submission",
+      html: `<h4>Name: ${name}</h4><h4>Email: ${email}</h4><p>Message: ${message}</p>`,
+    };
+
     await transporter.sendMail(mailOptions);
     res.status(200).json({ message: "Email sent successfully!" });
   } catch (error) {
-    console.error("Error during email sending:", error);
+    console.error("Error during form submission:", error);
     res.status(500).json({ error: "Internal server error." });
   }
 });
