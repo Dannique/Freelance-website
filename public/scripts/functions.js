@@ -87,7 +87,8 @@ document.addEventListener("DOMContentLoaded", () => {
     } catch (error) {
       failedMessage.classList.remove("d-none");
       failedMessage.classList.add("d-block");
-      console.error("Error:", error);
+      console.error("Error----->:", error);
+      console.log("error------>functions.js1", error);
     } finally {
       // Hide spinner and re-enable button
       loadingSpinner.classList.add("d-none");
