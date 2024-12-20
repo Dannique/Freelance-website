@@ -32,7 +32,8 @@ app.post("/", async (req, res) => {
   if (req.body["g-recaptcha-response"]) {
     console.error(
       "Unexpected reCAPTCHA token found:",
-      req.body["g-recaptcha-response"]
+      req.body["g-recaptcha-response"],
+      error
     );
     return res
       .status(400)
@@ -82,9 +83,9 @@ app.post("/", async (req, res) => {
 
     res.status(200).json({ message: "Email sent successfully!" });
   } catch (error) {
-    console.error("Error:", error);
+    console.error("Error:-------->1", error);
     console.error("Email service failed:", error);
-    res.status(500).json({ error: "Internal server error." });
+    res.status(500).json({ error: "--->2Internal server error." });
   }
 });
 
