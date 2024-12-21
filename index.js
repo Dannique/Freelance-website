@@ -27,7 +27,8 @@ app.get(["/", "/nl"], (req, res) => {
 
 app.post("/", async (req, res) => {
   console.log("POST request received:", req.body);
-
+  console.log("Request body:", req.body); // Log the incoming data
+  console.log("Headers:", req.headers); // Log headers to check for reCAPTCHA remnants
   const { name, email, message } = req.body;
 
   // const transporter = nodemailer.createTransport({
