@@ -26,19 +26,7 @@ app.get(["/", "/nl"], (req, res) => {
 });
 
 app.post("/", async (req, res) => {
-  console.log("POST request received:", req.body);
-  console.log("Request body:", req.body); // Log the incoming data
-  console.log("Headers:", req.headers); // Log headers to check for reCAPTCHA remnants
   const { name, email, message } = req.body;
-
-  // const transporter = nodemailer.createTransport({
-  //   service: "gmail",
-  //   auth: {
-  //     user: process.env.EMAIL_USER,
-  //     pass: process.env.EMAIL_PASS,
-  //   },
-  //   pool: true,
-  // });
 
   const transporter = nodemailer.createTransport({
     service: "Gmail",
@@ -73,9 +61,8 @@ app.post("/", async (req, res) => {
 
     res.status(200).json({ message: "Email sent successfully!" });
   } catch (error) {
-    console.error("Error:-------->1", error);
     console.error("Email service failed:", error);
-    res.status(500).json({ error: "--->2Internal server error." });
+    res.status(500).json({ error: "Internal server error." });
   }
 });
 

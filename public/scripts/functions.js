@@ -74,9 +74,8 @@ document.addEventListener("DOMContentLoaded", () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formObject),
       });
-      console.log("Fetching from og:", window.location.origin + "/");
+
       if (response.ok) {
-        console.log("Fetching from:", window.location.origin + "/");
         successMessage.classList.remove("d-none");
         successMessage.classList.add("d-block");
         form.reset();
@@ -86,11 +85,9 @@ document.addEventListener("DOMContentLoaded", () => {
         failedMessage.classList.add("d-block");
       }
     } catch (error) {
-      console.log("Failed Fetching from:", window.location.origin + "/");
       failedMessage.classList.remove("d-none");
       failedMessage.classList.add("d-block");
-      console.error("Error----->:", error);
-      console.log("error------>functions.js1", error);
+      console.error("Error", error);
     } finally {
       // Hide spinner and re-enable button
       loadingSpinner.classList.add("d-none");
