@@ -69,13 +69,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const formObject = Object.fromEntries(formData.entries());
 
     try {
-      const response = await fetch("/", {
+      const response = await fetch(window.location.origin + "/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formObject),
       });
 
       if (response.ok) {
+        console.log("Fetching from:", window.location.origin + "/");
         successMessage.classList.remove("d-none");
         successMessage.classList.add("d-block");
         form.reset();

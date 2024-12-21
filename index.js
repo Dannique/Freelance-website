@@ -28,17 +28,6 @@ app.get(["/", "/nl"], (req, res) => {
 app.post("/", async (req, res) => {
   console.log("POST request received:", req.body);
 
-  // Check for unexpected properties
-  if (req.body["g-recaptcha-response"]) {
-    console.error(
-      "Unexpected reCAPTCHA token found:",
-      req.body["g-recaptcha-response"],
-      error
-    );
-    return res
-      .status(400)
-      .json({ error: "Unexpected reCAPTCHA token in request." });
-  }
   const { name, email, message } = req.body;
 
   // const transporter = nodemailer.createTransport({
