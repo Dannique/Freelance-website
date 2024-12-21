@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formObject),
       });
-
+      console.log("Fetching from og:", window.location.origin + "/");
       if (response.ok) {
         console.log("Fetching from:", window.location.origin + "/");
         successMessage.classList.remove("d-none");
@@ -86,6 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
         failedMessage.classList.add("d-block");
       }
     } catch (error) {
+      console.log("Failed Fetching from:", window.location.origin + "/");
       failedMessage.classList.remove("d-none");
       failedMessage.classList.add("d-block");
       console.error("Error----->:", error);
