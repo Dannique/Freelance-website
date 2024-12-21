@@ -74,7 +74,6 @@ body {
   overflow-x: hidden;
   background: linear-gradient(-45deg, #181e38, #22133f, #000824, #12002e);
   background-size: 400% 400%;
-  animation: gradient 8s ease infinite;
   &::-webkit-scrollbar {
     width: 9px;
   }
@@ -84,17 +83,6 @@ body {
   &::-webkit-scrollbar-thumb {
     background-color: rgba(85, 84, 87, 0.8); /* color of the scroll thumb */
     border-radius: 20px;
-  }
-}
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
   }
 }
 
@@ -208,7 +196,7 @@ a {
   width: 650px;
   height: 750px;
   border-radius: 50%;
-  background-color: rgba(126, 206, 243, 0.25);
+  background-color: rgba(126, 206, 243, 0.1);
   box-shadow: 0 0 15px 0 #71b47a;
   filter: blur(200px);
   position: fixed;
@@ -219,11 +207,21 @@ a {
   width: 650px;
   height: 750px;
   border-radius: 50%;
-  background-color: rgba(210, 143, 241, 0.25);
+  background-color: rgba(210, 143, 241, 0.15);
   box-shadow: 0 0 15px 0 #71b47a;
   filter: blur(200px);
   position: fixed;
   z-index: -1000;
+}
+
+.header-blue-circle {
+  margin: -200px 0 0 -430px;
+  overflow-x: hidden;
+}
+.header-pink-circle {
+  right: -370px;
+  top: 350px;
+  overflow-x: hidden;
 }
 
 .id-anchor {
@@ -370,16 +368,6 @@ a {
 }
 
 /******** HEADER ************/
-
-.header-blue-circle {
-  margin: -200px 0 0 -230px;
-  overflow-x: hidden;
-}
-.header-pink-circle {
-  right: -100px;
-  top: 350px;
-  overflow-x: hidden;
-}
 
 // .top-div {
 //   background: linear-gradient(
