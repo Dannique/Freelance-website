@@ -209,10 +209,6 @@ a {
   margin: auto !important;
 }
 
-/* .grecaptcha-badge {
-  visibility: hidden;
-} */
-
 /************** NAVBAR *******************/
 .bg-body-tertiary {
   background-color: transparent !important;
@@ -274,13 +270,7 @@ a {
 .navbar-scrolled {
   backdrop-filter: blur(20px);
   padding-top: 8px !important;
-  background: radial-gradient(
-    circle,
-    rgba(0, 8, 36, 0.6) 56%,
-    rgba(26, 31, 64, 0.6) 86%,
-    rgba(27, 28, 71, 0.45) 96%,
-    rgba(56, 35, 74, 0.55) 100%
-  ) !important;
+  background: radial-gradient(circle, rgba(0, 8, 36, 0.6) 56%, rgba(26, 31, 64, 0.6) 86%, rgba(27, 28, 71, 0.45) 96%, rgba(56, 35, 74, 0.55) 100%) !important;
 }
 .navbar-scrolled .dropdown-menu[data-bs-popper] {
   margin-top: 8px;
@@ -317,12 +307,7 @@ a {
 }
 
 .dropdown-item:hover {
-  background: linear-gradient(
-    180deg,
-    rgba(14, 16, 112, 0.5) 0%,
-    rgba(57, 8, 80, 0.59) 45%,
-    rgba(128, 21, 131, 0.38) 100%
-  ) !important;
+  background: linear-gradient(180deg, rgba(14, 16, 112, 0.5) 0%, rgba(57, 8, 80, 0.59) 45%, rgba(128, 21, 131, 0.38) 100%) !important;
 }
 
 .logo {
@@ -401,13 +386,7 @@ a {
   border-width: 3px;
   border-style: solid;
   border-radius: 40px;
-  border-image: linear-gradient(
-      to bottom,
-      rgba(212, 172, 250, 0.8823529412) 0%,
-      #6f75a9 40%,
-      #2b2d74 100%
-    )
-    1;
+  border-image: linear-gradient(to bottom, rgba(212, 172, 250, 0.8823529412) 0%, #6f75a9 40%, #2b2d74 100%) 1;
 }
 
 .cta {
@@ -419,13 +398,7 @@ a {
 }
 .cta .cta-btn:hover {
   border-image: none;
-  border-image: linear-gradient(
-      to right,
-      rgba(219, 193, 243, 0.8352941176) 0%,
-      #abb0e3 60%,
-      #5d60ba 100%
-    )
-    1;
+  border-image: linear-gradient(to right, rgba(219, 193, 243, 0.8352941176) 0%, #abb0e3 60%, #5d60ba 100%) 1;
 }
 
 /********** PORTFOLIO **********/
@@ -478,13 +451,7 @@ a {
 .contactform-container .form .form-group .form-control {
   border: 2px solid;
   border-radius: 0;
-  border-image: linear-gradient(
-      to right,
-      rgba(212, 172, 250, 0.8352941176) 0%,
-      #6f75a9 60%,
-      #2b2d74 100%
-    )
-    1;
+  border-image: linear-gradient(to right, rgba(212, 172, 250, 0.8352941176) 0%, #6f75a9 60%, #2b2d74 100%) 1;
   background-color: transparent;
   height: 50px;
 }
@@ -497,13 +464,7 @@ a {
 }
 .contactform-container .form textarea.form-control {
   border-bottom: 2px solid;
-  border-image: linear-gradient(
-      to right,
-      rgba(212, 172, 250, 0.8352941176) 0%,
-      #6f75a9 60%,
-      #2b2d74 100%
-    )
-    1;
+  border-image: linear-gradient(to right, rgba(212, 172, 250, 0.8352941176) 0%, #6f75a9 60%, #2b2d74 100%) 1;
   height: 30px;
   overflow: hidden;
 }
@@ -525,75 +486,31 @@ a {
 .btn {
   color: rgba(250, 251, 253, 0.862745098);
   font-size: 1.2em;
-  border-image: linear-gradient(
-      to right,
-      rgba(212, 172, 250, 0.8352941176) 0%,
-      #6f75a9 60%,
-      #2b2d74 100%
-    )
-    1;
+  border-image: linear-gradient(to right, rgba(212, 172, 250, 0.8352941176) 0%, #6f75a9 60%, #2b2d74 100%) 1;
   border-width: 2px;
   border-style: solid;
   border-radius: 0;
   letter-spacing: 1.4px;
   padding: 10px;
-  background: linear-gradient(
-    180deg,
-    rgba(14, 16, 112, 0.3) 0%,
-    rgba(57, 8, 80, 0.29) 45%,
-    rgba(128, 21, 131, 0.18) 78%
-  );
+  background: linear-gradient(180deg, rgba(14, 16, 112, 0.3) 0%, rgba(57, 8, 80, 0.29) 45%, rgba(128, 21, 131, 0.18) 78%);
   width: 100%;
 }
 .btn:hover {
-  background: linear-gradient(
-    180deg,
-    rgba(14, 16, 112, 0.5) 0%,
-    rgba(57, 8, 80, 0.59) 45%,
-    rgba(128, 21, 131, 0.38) 100%
-  );
+  background: linear-gradient(180deg, rgba(14, 16, 112, 0.5) 0%, rgba(57, 8, 80, 0.59) 45%, rgba(128, 21, 131, 0.38) 100%);
   color: #fafbfd;
   outline: none;
-  border-image: linear-gradient(
-      to right,
-      rgba(212, 172, 250, 0.8352941176) 0%,
-      #6f75a9 60%,
-      #2b2d74 100%
-    )
-    1;
+  border-image: linear-gradient(to right, rgba(212, 172, 250, 0.8352941176) 0%, #6f75a9 60%, #2b2d74 100%) 1;
 }
 .btn:active {
-  background: linear-gradient(
-    180deg,
-    rgba(14, 16, 112, 0.5) 0%,
-    rgba(57, 8, 80, 0.59) 45%,
-    rgba(128, 21, 131, 0.38) 100%
-  );
+  background: linear-gradient(180deg, rgba(14, 16, 112, 0.5) 0%, rgba(57, 8, 80, 0.59) 45%, rgba(128, 21, 131, 0.38) 100%);
   color: #fafbfd;
-  border-image: linear-gradient(
-      to right,
-      rgba(212, 172, 250, 0.8352941176) 0%,
-      #6f75a9 60%,
-      #2b2d74 100%
-    )
-    1;
+  border-image: linear-gradient(to right, rgba(212, 172, 250, 0.8352941176) 0%, #6f75a9 60%, #2b2d74 100%) 1;
   outline: none;
 }
 .btn:active:focus {
-  background: linear-gradient(
-    180deg,
-    rgba(14, 16, 112, 0.5) 0%,
-    rgba(57, 8, 80, 0.59) 45%,
-    rgba(128, 21, 131, 0.38) 100%
-  );
+  background: linear-gradient(180deg, rgba(14, 16, 112, 0.5) 0%, rgba(57, 8, 80, 0.59) 45%, rgba(128, 21, 131, 0.38) 100%);
   color: #fafbfd;
-  border-image: linear-gradient(
-      to right,
-      rgba(212, 172, 250, 0.8352941176) 0%,
-      #6f75a9 60%,
-      #2b2d74 100%
-    )
-    1;
+  border-image: linear-gradient(to right, rgba(212, 172, 250, 0.8352941176) 0%, #6f75a9 60%, #2b2d74 100%) 1;
   outline: none;
 }
 
