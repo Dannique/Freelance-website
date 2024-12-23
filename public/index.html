@@ -3,8 +3,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <!-- <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1.0, user-scalable=no"> -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1.0"> -->
   <meta name="description"
     content="I'm Dannique, a web developer creating custom websites for small and medium-sized businesses. Let me help bring your vision to life!">
   <meta name="keywords" content="web developent, website, build a website, portfolio, dannique">
@@ -37,8 +37,7 @@
     <div class="top-div">
       <div class="blue-circle header-blue-circle"></div>
       <nav id="navbar"
-        class="navbar navbar-expand-lg bg-body-tertiary d-flex justify-center outfit-regular bg-transparent pt-5 fixed-top nav-underline"
-        role="nav">
+        class="navbar navbar-expand-lg bg-body-tertiary d-flex justify-center outfit-regular bg-transparent pt-5 fixed-top nav-underline">
         <div class="container-fluid d-flex justify-content-between align-items-center">
 
           <a class="navbar-brand" href="#" title="navbar brand home">
@@ -100,7 +99,7 @@
       </nav>
       <div
         class="header d-flex align-center justify-content-lg-around justify-content-center flex-md-row flex-column-reverse container"
-        id="intro" role="intro">
+        id="intro">
         <div class="my-md-4 pt-md-5">
           <h1 class="outfit-bold title hi-title" id="title">Hi!</h1>
           <h1 class="outfit-bold title tag" id="title2">My name is Dannique. </h1>
@@ -129,7 +128,7 @@
     </div>
 
     <span class="id-anchor" id="services"></span>
-    <div class="pt-5 mt-5 container" role="services">
+    <div class="pt-5 mt-5 container">
       <h2 class="py-sm-5 py-3 text-center">Services</h2>
       <div class="services-wrapper d-flex mx-auto">
         <div class="service-wrapper mx-2">
@@ -229,7 +228,7 @@
     </div>
 
     <span class="id-anchor" id="portfolio"></span>
-    <div class="portfolio pt-5 mt-lg-5" role="portfolio">
+    <div class="portfolio pt-5 mt-lg-5">
       <div class="portfolio-intro text-center m-auto">
         <h2 class="py-sm-5 py-4">Portfolio</h2>
         <p class="text m-auto pb-sm-5 pb-3 px-2" id="portfolioSubtext">Here are some of my latest projects:</p>
@@ -284,7 +283,7 @@
     </div>
 
     <span class="id-anchor" id="contact"></span>
-    <div class="contact pt-5 mt-lg-5" role="contact">
+    <div class="contact pt-5 mt-lg-5">
 
       <h2 class="py-5">Contact</h2>
 
@@ -306,16 +305,16 @@
               <form id="contact-form" name="myForm" class="form needs-validation" action="/" method="POST" role="form"
                 novalidate>
                 <div class="form-group py-3">
-                  <input type="text" class="form-control" id="name" name="name" placeholder="Your name" tabindex="1"
-                    required />
+                  <input type="text" class="form-control" id="name" name="name" placeholder="Your name"
+                    aria-label="Your name" required />
                   <div class="invalid-feedback" id="invalidName">
                     Please enter your name.
                   </div>
                 </div>
 
                 <div class="form-group py-3">
-                  <input type="email" class="form-control" id="email" name="email" placeholder="Your email" tabindex="2"
-                    required />
+                  <input type="email" class="form-control" id="email" name="email" placeholder="Your email"
+                    aria-label="Your email" required />
                   <div class="invalid-feedback" id="invalidEmail">
                     Please enter a valid email.
                   </div>
@@ -323,7 +322,7 @@
 
                 <div class="form-group py-3">
                   <textarea rows="6" cols="60" name="message" class="form-control area-text" id="message"
-                    placeholder="Your message" tabindex="4" required></textarea>
+                    placeholder="Your message" aria-label="Your message" required></textarea>
                   <div class="invalid-feedback" id="invalidMessage">
                     Please enter a message in the textarea.
                   </div>
