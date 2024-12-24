@@ -57,14 +57,11 @@ $(function () {
         "Visuele aantrekkelijkheid is slechts de helft van het verhaal. Achter elke website schuilt een ontwikkelingsproces. Ik vertaal ontwerpen naar volledig functionele websites die op alle apparaten presteren.",
       portfolioSubtext:
         "Hier zijn een paar projecten die ik voor klanten heb gemaakt.",
-      vanwaarde:
-        "Maatwerkwebsite voor een detacheringbureau. Gemaakt met PHP, JavaScript, HTML en SCSS.",
-      beinema:
-        "Maatwerkwebsite voor een hypotheek en financieel adviseur. Gemaakt met PHP, Javascript, HTML en SCSS.",
-      teamforge:
-        "Maatwerkwebsite voor een outsourcingbedrijf. Gemaakt met PHP, JavaScript, HTML en CSS.",
+      vanwaarde: "Maatwerkwebsite voor een detacheringbureau.",
+      beinema: "Maatwerkwebsite voor een hypotheek en financieel adviseur.",
+      teamforge: "Maatwerkwebsite voor een outsourcingbedrijf.",
       danniqueme:
-        "Mijn portfolio website. Gemaakt met Javascript, HTML, SCSS, en React.",
+        "Maatwerk website voor een duik- en bootonderhoudsdiensten bedrijf.",
       contactText:
         "Interesse, vragen of wil je een offerte? Neem vrijblijvend contact op. Ik kijk ernaar uit om van je te horen en samen iets moois te creëren!",
       // Services
